@@ -1,0 +1,23 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "outDir": "./compiled/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "module": "es6",
+    "target": "es6",
+    "jsx": "react",
+    "lib": [
+      "es2015", "es2016",
+      "dom"
+    ],
+    "moduleResolution": "node",
+    "typeRoots" : [
+      "node_modules/@types",
+    ],
+    "resolveJsonModule": true,
+    "esModuleInterop": true
+  }
+}
