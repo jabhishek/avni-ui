@@ -15,9 +15,11 @@
     ],
     "moduleResolution": "node",
     "typeRoots" : [
-      "node_modules/@types",
+      "node_modules/@types"
     ],
     "resolveJsonModule": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "strict": true,
+    "alwaysStrict": true
   }
 }
