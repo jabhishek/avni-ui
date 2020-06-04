@@ -1,6 +1,5 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
-import { Button } from './Button';
+import { Button } from '@avni-ui/button';
 
 export default {
     title: 'Example Button',
@@ -8,7 +7,7 @@ export default {
 };
 
 export const ButtonStory = () => (
-    <Button onClick={action('clicked')}>
+    <Button>
     <span role="img" aria-label="so cool">
       😀 😎 👍 💯
     </span>

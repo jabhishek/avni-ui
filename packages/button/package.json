@@ -1,0 +1,39 @@
+{
+  "name": "@avni-ui/button",
+  "version": "1.0.0",
+  "description": "Button Component",
+  "keywords": [
+    "React",
+    "button",
+    "avni-ui"
+  ],
+  "author": "Abhishek Jain <abhi2000@gmail.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "pretsc": "rm -rf lib",
+    "tsc": "tsc"
+  },
+  "peerDependencies": {
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "typescript": "3.9.3"
+  }
+}
