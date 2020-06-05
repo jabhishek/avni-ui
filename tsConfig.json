@@ -12,7 +12,9 @@
     "sourceMap": false,
     "lib": [
       "es6"
-    ]
+    ],
+    "strict": true,
+    "alwaysStrict": true
   },
   "exclude": [
     "node_modules",

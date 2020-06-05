@@ -18,7 +18,8 @@
   },
   "scripts": {
     "pretsc": "rm -rf lib",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "lint": "eslint . --ext ts,tsx --fix"
   },
   "peerDependencies": {
     "@emotion/core": "10.0.28",

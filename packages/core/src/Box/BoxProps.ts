@@ -1,6 +1,6 @@
-import * as React from "react";
-import {AnchorHTMLAttributes, ButtonHTMLAttributes} from "react";
-import {StyledSystemProps} from "./StyledSystemProps";
+import * as React from 'react';
+import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
+import { StyledSystemProps } from './StyledSystemProps';
 
 /*
 export interface ButtonHTMLProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -16,6 +16,6 @@ export interface AllHTMLProps<T> extends React.HTMLAttributes<T> {
 }
 */
 
-type HTMLProps = /*AnchorHTMLProps | ButtonHTMLProps | */React.AllHTMLAttributes<HTMLElement>;
+type HTMLProps = /*AnchorHTMLProps | ButtonHTMLProps | */ React.AllHTMLAttributes<HTMLElement>;
 
 export type BoxProps = HTMLProps & StyledSystemProps<any>;
