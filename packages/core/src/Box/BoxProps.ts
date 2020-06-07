@@ -18,4 +18,4 @@ export interface AllHTMLProps<T> extends React.HTMLAttributes<T> {
 
 type HTMLProps = /*AnchorHTMLProps | ButtonHTMLProps | */ React.AllHTMLAttributes<HTMLElement>;
 
-export type BoxProps = HTMLProps & StyledSystemProps<any>;
+export type BoxProps = HTMLProps & StyledSystemProps;

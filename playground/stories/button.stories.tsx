@@ -7,7 +7,11 @@ export default {
   component: Button,
 };
 
-export const ButtonStory = () => <Button onClick={action('clicked')}>Submit</Button>;
+export const ButtonStory = () => (
+  <Button type="button" onClick={action('clicked')} variantColor="red">
+    Submit
+  </Button>
+);
 ButtonStory.story = {
   name: 'Button',
 };
