@@ -14,13 +14,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Button = void 0;
 const React = require("react");
 const core_1 = require("@avni-ui/core");
-const getColorProps = (variantColor) => {
-    return {
-        color: variantColor,
-    };
-};
+const useStyles_1 = require("./useStyles");
 exports.Button = (_a) => {
-    var { children, type = 'button', variantColor } = _a, props = __rest(_a, ["children", "type", "variantColor"]);
-    const colorProps = getColorProps(variantColor);
-    return (React.createElement(core_1.Box, Object.assign({ as: "button", type: type }, colorProps, props), children));
+    var { children, type = 'button', variantColor = '#ff5a5a' } = _a, props = __rest(_a, ["children", "type", "variantColor"]);
+    const styleProps = useStyles_1.useStyles(variantColor);
+    console.log('styleProps', styleProps);
+    return (React.createElement(core_1.PseudoBox, Object.assign({ as: "button", type: type }, styleProps, props), children));
 };

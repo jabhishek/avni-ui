@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { StyledSystemProps } from './StyledSystemProps';
-declare type HTMLProps = React.AllHTMLAttributes<HTMLElement>;
-export declare type BoxProps = HTMLProps & StyledSystemProps;
-export {};
+import { ColorProps, LayoutProps, SpaceProps, BorderProps, BackgroundProps, PositionProps, FlexboxProps, ShadowProps, GridProps, OpacityProps, OverflowProps, TypographyProps } from 'styled-system';
+export declare type StyledSystemProps = LayoutProps & ColorProps & SpaceProps & BorderProps & BackgroundProps & PositionProps & FlexboxProps & ShadowProps & GridProps & OpacityProps & OverflowProps & TypographyProps;
+export declare type BoxProps = React.AllHTMLAttributes<HTMLElement> & StyledSystemProps;

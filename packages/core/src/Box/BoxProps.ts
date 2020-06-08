@@ -1,21 +1,30 @@
 import * as React from 'react';
-import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
-import { StyledSystemProps } from './StyledSystemProps';
+import {
+  ColorProps,
+  LayoutProps,
+  SpaceProps,
+  BorderProps,
+  BackgroundProps,
+  PositionProps,
+  FlexboxProps,
+  ShadowProps,
+  GridProps,
+  OpacityProps,
+  OverflowProps,
+  TypographyProps,
+} from 'styled-system';
 
-/*
-export interface ButtonHTMLProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    as: 'button';
-}
+export type StyledSystemProps = LayoutProps &
+  ColorProps &
+  SpaceProps &
+  BorderProps &
+  BackgroundProps &
+  PositionProps &
+  FlexboxProps &
+  ShadowProps &
+  GridProps &
+  OpacityProps &
+  OverflowProps &
+  TypographyProps;
 
-export interface AnchorHTMLProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
-    as: 'a';
-}
-
-export interface AllHTMLProps<T> extends React.HTMLAttributes<T> {
-    as?: Exclude<keyof JSX.IntrinsicElements, 'button' | 'a'>;
-}
-*/
-
-type HTMLProps = /*AnchorHTMLProps | ButtonHTMLProps | */ React.AllHTMLAttributes<HTMLElement>;
-
-export type BoxProps = HTMLProps & StyledSystemProps;
+export type BoxProps = React.AllHTMLAttributes<HTMLElement> & StyledSystemProps;

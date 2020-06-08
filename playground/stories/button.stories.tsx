@@ -8,7 +8,7 @@ export default {
 };
 
 export const ButtonStory = () => (
-  <Button type="button" onClick={action('clicked')} variantColor="red">
+  <Button type="button" onClick={action('clicked')}>
     Submit
   </Button>
 );

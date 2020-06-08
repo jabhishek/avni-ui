@@ -1,29 +1,25 @@
 import * as React from 'react';
-import { Box } from '@avni-ui/core';
+import { PseudoBox } from '@avni-ui/core';
 import { ButtonHTMLAttributes } from 'react';
+import { useStyles } from './useStyles';
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  variantColor: string;
+  variantColor?: string;
 }
-
-const getColorProps = (variantColor: string) => {
-  return {
-    color: variantColor,
-  };
-};
 
 export const Button: React.FC<IButtonProps> = ({
   children,
   type = 'button',
-  variantColor,
+  variantColor = '#ff5a5a',
   ...props
 }: IButtonProps) => {
-  const colorProps = getColorProps(variantColor);
+  const styleProps = useStyles(variantColor);
+  console.log('styleProps', styleProps);
 
   return (
-    <Box as="button" type={type} {...colorProps} {...props}>
+    <PseudoBox as="button" type={type} {...styleProps} {...props}>
       {children}
-    </Box>
+    </PseudoBox>
   );
 };
