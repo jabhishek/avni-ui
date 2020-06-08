@@ -1,5 +1,7 @@
 import React from 'react';
 import { Box } from '@avni-ui/core/lib/Box';
+import { defaultTheme } from '@avni-ui/core/lib/Theme';
+import { ThemeProvider } from '@avni-ui/core/lib/ThemeProvider';
 
 export default {
   title: 'Example Box',
@@ -7,9 +9,11 @@ export default {
 };
 
 export const BoxStory = () => (
-  <Box as="button" alt="hello" color="red">
-    Hello World!
-  </Box>
+  <ThemeProvider theme={defaultTheme}>
+    <Box as="button" alt="hello" color="primary" p="small">
+      Hello World!
+    </Box>
+  </ThemeProvider>
 );
 
 BoxStory.story = {

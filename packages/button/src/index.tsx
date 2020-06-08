@@ -11,7 +11,7 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button: React.FC<IButtonProps> = ({
   children,
   type = 'button',
-  variantColor = '#ff5a5a',
+  variantColor = '#ff7070',
   ...props
 }: IButtonProps) => {
   const styleProps = useStyles(variantColor);
