@@ -2,7 +2,7 @@ import { ITheme } from './ITheme';
 
 export const defaultTheme: ITheme = {
   colors: {
-    primary: 'red',
+    primary: '#ff7070',
     secondary: 'blue',
   },
   space: {
@@ -20,11 +20,11 @@ export const defaultTheme: ITheme = {
     round: '100%',
   },
   breakpoints: ['320px', '768px', '1024px', '1824px'],
-  variants: {
+  variantTheme: {
     buttons: {
       primary: {
         color: 'white',
-        bg: 'primary',
+        bgColor: 'primary',
       },
     },
   },

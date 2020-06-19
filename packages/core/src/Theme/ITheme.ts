@@ -1,10 +1,12 @@
 import { Theme as StyledSystemTheme } from 'styled-system';
-import { StyledSystemProps } from '../Box/BoxProps';
 
-type IVariantElements = 'buttons';
-
-type Variant = Record<string, Partial<Record<keyof StyledSystemProps, unknown>>>;
+export type ButtonVariantTheme = {
+  color?: string;
+  bgColor?: string;
+};
 
 export interface ITheme extends StyledSystemTheme {
-  variants?: Partial<Record<IVariantElements, Variant>>;
+  variantTheme?: {
+    buttons: Record<string, ButtonVariantTheme>;
+  };
 }

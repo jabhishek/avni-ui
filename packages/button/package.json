@@ -33,11 +33,13 @@
   "devDependencies": {
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
+    "@types/lodash": "4.14.155",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "typescript": "3.9.3"
   },
   "dependencies": {
-    "@avni-ui/core": "1.0.0"
+    "@avni-ui/core": "1.0.0",
+    "lodash.get": "^4.4.2"
   }
 }

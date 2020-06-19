@@ -15,9 +15,9 @@ import {
   textStyle,
   typography,
 } from 'styled-system';
-import { CUSTOM_PROPS } from './customProps';
+import { CUSTOM_PROPS, customProps } from './customProps';
 
-const all = compose(
+export const allStyled = compose(
   space,
   typography,
   color,
@@ -31,7 +31,9 @@ const all = compose(
   buttonStyle,
   textStyle,
   colorStyle,
+  customProps,
 );
-const styledProps: Array<string> = all.propNames as Array<string>;
+
+const styledProps: Array<string> = allStyled.propNames as Array<string>;
 
 export const shouldForwardProp = createShouldForwardProp([...styledProps, ...CUSTOM_PROPS]);

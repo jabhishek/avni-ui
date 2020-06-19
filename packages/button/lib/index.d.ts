@@ -1,8 +1,3 @@
 import * as React from 'react';
-import { ButtonHTMLAttributes } from 'react';
-interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    children: React.ReactNode;
-    variantColor?: string;
-}
+import { IButtonProps } from './models';
 export declare const Button: React.FC<IButtonProps>;
-export {};

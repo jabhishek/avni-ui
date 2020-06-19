@@ -9,3 +9,5 @@ Object.defineProperty(exports, "defaultTheme", { enumerable: true, get: function
 var ThemeProvider_1 = require("./ThemeProvider");
 Object.defineProperty(exports, "ThemeProvider", { enumerable: true, get: function () { return ThemeProvider_1.ThemeProvider; } });
 Object.defineProperty(exports, "useTheme", { enumerable: true, get: function () { return ThemeProvider_1.useTheme; } });
+var color_1 = require("./color");
+Object.defineProperty(exports, "getColor", { enumerable: true, get: function () { return color_1.getColor; } });

@@ -9,6 +9,7 @@ import { Box } from '../Box';
 /**
  * The selectors are based on [WAI-ARIA state properties](https://www.w3.org/WAI/PF/aria-1.1/states_and_properties) and common CSS Selectors
  */
+const hover = '&:hover';
 const disabled =
   '&:disabled, &:disabled:focus, &:disabled:hover, &[aria-disabled=true], &[aria-disabled=true]:focus, &[aria-disabled=true]:hover';
 
@@ -41,16 +42,17 @@ export const transformAliasProps = (props: any) => {
 
 type PseudoBoxProps = {
   _disabled?: any;
+  _hover?: any;
 };
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 export const PseudoBox: FunctionComponent<PseudoBoxProps & BoxProps> = styled(Box)(
   (props: PseudoBoxProps) => {
-    console.log('PseudoBoxProps', props);
-    const { _disabled } = props;
+    const { _disabled, _hover } = props;
     return css({
       [disabled]: transformAliasProps(_disabled),
+      [hover]: transformAliasProps(_hover),
     });
   },
 );

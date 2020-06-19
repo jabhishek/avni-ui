@@ -9,6 +9,7 @@ export interface ICustomProps {
 
 export const config: { [value: string]: boolean } = {
   cursor: true,
+  transition: true,
 };
 
 export const customProps = system(config);

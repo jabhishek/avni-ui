@@ -16,8 +16,7 @@ const React = require("react");
 const core_1 = require("@avni-ui/core");
 const useStyles_1 = require("./useStyles");
 exports.Button = (_a) => {
-    var { children, type = 'button', variantColor = '#ff7070' } = _a, props = __rest(_a, ["children", "type", "variantColor"]);
-    const styleProps = useStyles_1.useStyles(variantColor);
-    console.log('styleProps', styleProps);
-    return (React.createElement(core_1.PseudoBox, Object.assign({ as: "button", type: type }, styleProps, props), children));
+    var { children, type = 'button', baseColor, variant, isDisabled } = _a, props = __rest(_a, ["children", "type", "baseColor", "variant", "isDisabled"]);
+    const styleProps = useStyles_1.useStyles({ baseColor, variant });
+    return (React.createElement(core_1.PseudoBox, Object.assign({ as: "button", disabled: isDisabled, "aria-disabled": isDisabled, type: type }, styleProps, props), children));
 };

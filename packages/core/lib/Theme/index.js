@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.defaultTheme = void 0;
 exports.defaultTheme = {
     colors: {
-        primary: 'red',
+        primary: '#ff7070',
         secondary: 'blue',
     },
     space: {
@@ -21,11 +21,11 @@ exports.defaultTheme = {
         round: '100%',
     },
     breakpoints: ['320px', '768px', '1024px', '1824px'],
-    variants: {
+    variantTheme: {
         buttons: {
             primary: {
                 color: 'white',
-                bg: 'primary',
+                bgColor: 'primary',
             },
         },
     },

@@ -3,7 +3,7 @@ import { Context, useContext } from 'react';
 import { ThemeContext } from '@emotion/core';
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 import { defaultTheme } from '../Theme';
-import { ITheme } from '../Theme/ITheme';
+import { ITheme } from '..';
 
 export const ThemeProvider = ({
   theme = defaultTheme,
