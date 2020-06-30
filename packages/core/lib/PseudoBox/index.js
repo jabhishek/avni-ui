@@ -6,6 +6,9 @@ const css_1 = require("@styled-system/css");
 const customProps_1 = require("../Box/customProps");
 const Box_1 = require("../Box");
 const hover = '&:hover';
+const active = '&:active, &[data-active=true]';
+const focus = '&:focus';
+const visited = '&:visited';
 const disabled = '&:disabled, &:disabled:focus, &:disabled:hover, &[aria-disabled=true], &[aria-disabled=true]:focus, &[aria-disabled=true]:hover';
 const transformAlias = (prop, propValue) => {
     const configKeys = Object.keys(customProps_1.config);
@@ -33,10 +36,13 @@ exports.transformAliasProps = (props) => {
     return result;
 };
 exports.PseudoBox = styled_1.default(Box_1.Box)((props) => {
-    const { _disabled, _hover } = props;
+    const { _disabled, _hover, _active, _focus, _visited } = props;
     return css_1.default({
         [disabled]: exports.transformAliasProps(_disabled),
         [hover]: exports.transformAliasProps(_hover),
+        [active]: exports.transformAliasProps(_active),
+        [focus]: exports.transformAliasProps(_focus),
+        [visited]: exports.transformAliasProps(_visited),
     });
 });
 exports.PseudoBox.displayName = 'PseudoBox';

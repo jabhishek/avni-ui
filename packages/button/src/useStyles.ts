@@ -1,40 +1,32 @@
-import { getColor, defaultTheme, useTheme } from '@avni-ui/core';
-// @ts-ignore
+import { colorUtils, defaultTheme, useTheme } from '@avni-ui/core';
 import get from 'lodash.get';
-import { act } from 'react-dom/test-utils';
 import { ButtonVariants } from './models';
 
-const colorBlack = getColor(`#000`);
-const colorWhite = getColor(`#fff`);
+const { getColor, getContrastingColor, getContrastingTextColor } = colorUtils;
 
-const getContrastingColor = (color: any) => {
-  const contrastDark = color.contrast(colorBlack);
-  const contrastLight = color.contrast(colorWhite);
-  /*
-
-  console.log('color', color.hsl().string());
-  console.log('contrastDark', contrastDark, contrastLight);
-*/
-
-  return contrastDark > contrastLight ? '#000' : '#fff';
-};
+const baseBoxShadow =
+  '0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)';
+const hoverBoxShadow = `0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12)`;
 
 const getColorProps = ({ baseColor, variant }: { baseColor: string; variant: ButtonVariants }) => {
   const color = getColor(baseColor).rgb();
 
-  const action = color.isDark() ? 'lighten' : 'darken';
-
-  const borderColor = color[action](0.1).string();
-  const hoverBgColor = color[action](0.1);
-
-  const hoverTextColor = getContrastingColor(hoverBgColor);
+  const hoverBgColor = getContrastingColor(baseColor, 1.4);
+  const outlineColor = getContrastingColor(baseColor, 3);
+  const hoverTextColor = getContrastingTextColor(hoverBgColor, '#000', '#fff');
 
   return {
     backgroundColor: baseColor,
-    color: getContrastingColor(color),
-    border: `1px solid ${borderColor}`,
-    _hover: { backgroundColor: hoverBgColor.hsl().string(), color: hoverTextColor, opacity: 0.9 },
-    /*_hover: { opacity: 0.9 },*/
+    color: getContrastingTextColor(color),
+    _hover: {
+      backgroundColor: hoverBgColor.hsl().string(),
+      color: hoverTextColor,
+      opacity: 0.9,
+      boxShadow: hoverBoxShadow,
+    },
+    _focus: {
+      boxShadow: `0px 0px 1px 2px ${outlineColor}`,
+    },
   };
 };
 
@@ -43,7 +35,10 @@ const defaultStyle = {
   cursor: 'pointer',
   border: 'none',
   borderRadius: '2px',
+  outline: 'none',
   transition: '0.5s all',
+  fontFamily: 'body',
+  boxShadow: baseBoxShadow,
 };
 
 const getColorFromUserTheme = (baseColor: string): string | undefined => {

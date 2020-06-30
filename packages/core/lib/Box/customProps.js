@@ -5,6 +5,7 @@ const styled_system_1 = require("styled-system");
 exports.CUSTOM_PROPS = ['cursor'];
 exports.config = {
     cursor: true,
+    outline: true,
     transition: true,
 };
 exports.customProps = styled_system_1.system(exports.config);

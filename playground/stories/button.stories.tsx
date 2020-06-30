@@ -3,6 +3,7 @@ import { Button } from '@avni-ui/button';
 import { defaultTheme } from '@avni-ui/core/lib/Theme';
 import { ThemeProvider } from '@avni-ui/core/lib/ThemeProvider';
 import { action } from '@storybook/addon-actions';
+import { Box } from '@avni-ui/core';
 
 export default {
   title: 'Example Button',
@@ -19,11 +20,11 @@ export const ButtonStory = () => {
   return (
     <ThemeProvider theme={defaultTheme}>
       <React.Fragment>
-        <div>
+        <Box mb={8}>
           <input type="number" value={hue} onChange={(e) => setHue(e.target.value)} />
           <input type="number" value={sat} onChange={(e) => setSat(e.target.value)} />
           <input type="number" value={lightness} onChange={(e) => setLightness(e.target.value)} />
-        </div>
+        </Box>
         <Button type="button" baseColor={color} onClick={action('clicked')}>
           Submit
         </Button>

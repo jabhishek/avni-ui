@@ -1,6 +1,9 @@
 import { ITheme } from './ITheme';
 
 export const defaultTheme: ITheme = {
+  fonts: {
+    body: 'Roboto, sans-serif',
+  },
   colors: {
     primary: '#ff7070',
     secondary: 'blue',

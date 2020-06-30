@@ -2,6 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.defaultTheme = void 0;
 exports.defaultTheme = {
+    fonts: {
+        body: 'Roboto, sans-serif',
+    },
     colors: {
         primary: '#ff7070',
         secondary: 'blue',

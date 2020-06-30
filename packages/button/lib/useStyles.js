@@ -1,26 +1,31 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.useStyles = void 0;
 const core_1 = require("@avni-ui/core");
-const lodash_get_1 = require("lodash.get");
-const colorBlack = core_1.getColor(`#000`);
-const colorWhite = core_1.getColor(`#fff`);
-const getContrastingColor = (color) => {
-    const contrastDark = color.contrast(colorBlack);
-    const contrastLight = color.contrast(colorWhite);
-    return contrastDark > contrastLight ? '#000' : '#fff';
-};
+const lodash_get_1 = __importDefault(require("lodash.get"));
+const { getColor, getContrastingColor, getContrastingTextColor } = core_1.colorUtils;
+const baseBoxShadow = '0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)';
+const hoverBoxShadow = `0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12)`;
 const getColorProps = ({ baseColor, variant }) => {
-    const color = core_1.getColor(baseColor).rgb();
-    const action = color.isDark() ? 'lighten' : 'darken';
-    const borderColor = color[action](0.1).string();
-    const hoverBgColor = color[action](0.1);
-    const hoverTextColor = getContrastingColor(hoverBgColor);
+    const color = getColor(baseColor).rgb();
+    const hoverBgColor = getContrastingColor(baseColor, 1.4);
+    const outlineColor = getContrastingColor(baseColor, 3);
+    const hoverTextColor = getContrastingTextColor(hoverBgColor, '#000', '#fff');
     return {
         backgroundColor: baseColor,
-        color: getContrastingColor(color),
-        border: `1px solid ${borderColor}`,
-        _hover: { backgroundColor: hoverBgColor.hsl().string(), color: hoverTextColor, opacity: 0.9 },
+        color: getContrastingTextColor(color),
+        _hover: {
+            backgroundColor: hoverBgColor.hsl().string(),
+            color: hoverTextColor,
+            opacity: 0.9,
+            boxShadow: hoverBoxShadow,
+        },
+        _focus: {
+            boxShadow: `0px 0px 1px 2px ${outlineColor}`,
+        },
     };
 };
 const defaultStyle = {
@@ -28,7 +33,10 @@ const defaultStyle = {
     cursor: 'pointer',
     border: 'none',
     borderRadius: '2px',
+    outline: 'none',
     transition: '0.5s all',
+    fontFamily: 'body',
+    boxShadow: baseBoxShadow,
 };
 const getColorFromUserTheme = (baseColor) => {
     const theme = core_1.useTheme();
@@ -37,7 +45,7 @@ const getColorFromUserTheme = (baseColor) => {
 };
 const getBaseColorToUse = (baseColor) => {
     if (baseColor) {
-        if (core_1.getColor(baseColor)) {
+        if (getColor(baseColor)) {
             return baseColor;
         }
         const colorFromUserTheme = getColorFromUserTheme(baseColor);

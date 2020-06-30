@@ -5,14 +5,21 @@ export declare const useStyles: ({ baseColor, variant, }: {
 }) => {
     backgroundColor: string;
     color: string;
-    border: string;
     _hover: {
         backgroundColor: any;
         color: string;
         opacity: number;
+        boxShadow: string;
+    };
+    _focus: {
+        boxShadow: string;
     };
     p: string;
     cursor: string;
+    border: string;
     borderRadius: string;
+    outline: string;
     transition: string;
+    fontFamily: string;
+    boxShadow: string;
 };
