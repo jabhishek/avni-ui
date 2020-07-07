@@ -1,4 +1,4 @@
-import { colorUtils, defaultTheme, useTheme } from '@avni-ui/core';
+import { colorUtils, defaultTheme, useTheme, ITheme } from '@avni-ui/core';
 import get from 'lodash.get';
 import { ButtonVariants } from './models';
 
@@ -11,17 +11,14 @@ const hoverBoxShadow = `0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0
 const getColorProps = ({ baseColor, variant }: { baseColor: string; variant: ButtonVariants }) => {
   const color = getColor(baseColor).rgb();
 
-  const hoverBgColor = getContrastingColor(baseColor, 1.4);
+  const hoverBgColor = getContrastingColor(baseColor, 1.15);
   const outlineColor = getContrastingColor(baseColor, 3);
-  const hoverTextColor = getContrastingTextColor(hoverBgColor, '#000', '#fff');
 
   return {
     backgroundColor: baseColor,
     color: getContrastingTextColor(color),
     _hover: {
       backgroundColor: hoverBgColor.hsl().string(),
-      color: hoverTextColor,
-      opacity: 0.9,
       boxShadow: hoverBoxShadow,
     },
     _focus: {
@@ -31,12 +28,11 @@ const getColorProps = ({ baseColor, variant }: { baseColor: string; variant: But
 };
 
 const defaultStyle = {
-  p: '5px 20px',
   cursor: 'pointer',
   border: 'none',
   borderRadius: '2px',
   outline: 'none',
-  transition: '0.5s all',
+  transition: '0.25s all',
   fontFamily: 'body',
   boxShadow: baseBoxShadow,
 };
@@ -63,6 +59,8 @@ const getBaseColorToUse = (baseColor: string | undefined): string => {
   return get(defaultTheme, `colors.primary`);
 };
 
+const getSizeProps = ({ theme }: { theme: ITheme }) => {};
+
 export const useStyles = ({
   baseColor = 'red',
   variant = 'outline',
@@ -70,6 +68,9 @@ export const useStyles = ({
   baseColor?: string;
   variant?: ButtonVariants;
 }) => {
+  const theme = useTheme();
+
   const colorProps = getColorProps({ baseColor: getBaseColorToUse(baseColor), variant });
+  const sizeProps = getSizeProps({ theme });
   return { ...defaultStyle, ...colorProps };
 };

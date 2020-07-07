@@ -14,10 +14,10 @@ exports.getContrastingColor = (baseColor, contrastLevel) => {
     let color2 = colorObject;
     while (contrast < contrastLevel && newLightness > 0 && newLightness < 100) {
         if (isDark) {
-            newLightness++;
+            newLightness--;
         }
         else {
-            newLightness--;
+            newLightness++;
         }
         color2 = colorObject.lightness(newLightness);
         contrast = colorObject.contrast(color2);

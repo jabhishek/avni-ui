@@ -1,35 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.defaultTheme = void 0;
-exports.defaultTheme = {
-    fonts: {
-        body: 'Roboto, sans-serif',
-    },
-    colors: {
-        primary: '#ff7070',
-        secondary: 'blue',
-    },
-    space: {
+const fonts_1 = require("./utils/fonts");
+const colors_1 = require("./utils/colors");
+exports.defaultTheme = Object.assign(Object.assign({}, fonts_1.typography), { colors: colors_1.colors, space: {
         none: 0,
-        small: 4,
-        med: 8,
-        large: 12,
-        xl: 16,
-    },
-    radii: {
-        none: 0,
-        small: 4,
-        med: 8,
-        large: 12,
-        round: '100%',
-    },
-    breakpoints: ['320px', '768px', '1024px', '1824px'],
-    variantTheme: {
+        xs: fonts_1.pxToRem(4),
+        sm: fonts_1.pxToRem(8),
+        md: fonts_1.pxToRem(12),
+        lg: fonts_1.pxToRem(16),
+        xl: fonts_1.pxToRem(24),
+        '2xl': fonts_1.pxToRem(32),
+        '3xl': fonts_1.pxToRem(48),
+    }, breakpoints: ['20em', '48em', '64em', '114em'], variantTheme: {
         buttons: {
             primary: {
                 color: 'white',
                 bgColor: 'primary',
             },
         },
-    },
-};
+    } });

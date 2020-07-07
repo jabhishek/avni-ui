@@ -10,3 +10,5 @@ var ThemeProvider_1 = require("./ThemeProvider");
 Object.defineProperty(exports, "ThemeProvider", { enumerable: true, get: function () { return ThemeProvider_1.ThemeProvider; } });
 Object.defineProperty(exports, "useTheme", { enumerable: true, get: function () { return ThemeProvider_1.useTheme; } });
 exports.colorUtils = require("./color");
+var CSSReset_1 = require("./CSSReset");
+Object.defineProperty(exports, "CSSReset", { enumerable: true, get: function () { return CSSReset_1.CSSReset; } });
