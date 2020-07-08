@@ -10,6 +10,7 @@ const { getColor, getContrastingColor, getContrastingTextColor } = core_1.colorU
 const baseBoxShadow = '0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)';
 const hoverBoxShadow = `0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12)`;
 const getColorProps = ({ baseColor, variant }) => {
+    console.log('variant', variant);
     const color = getColor(baseColor).rgb();
     const hoverBgColor = getContrastingColor(baseColor, 1.15);
     const outlineColor = getContrastingColor(baseColor, 3);
@@ -51,10 +52,7 @@ const getBaseColorToUse = (baseColor) => {
     }
     return lodash_get_1.default(core_1.defaultTheme, `colors.primary`);
 };
-const getSizeProps = ({ theme }) => { };
 exports.useStyles = ({ baseColor = 'red', variant = 'outline', }) => {
-    const theme = core_1.useTheme();
     const colorProps = getColorProps({ baseColor: getBaseColorToUse(baseColor), variant });
-    const sizeProps = getSizeProps({ theme });
     return Object.assign(Object.assign({}, defaultStyle), colorProps);
 };

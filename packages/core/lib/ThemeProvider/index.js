@@ -9,6 +9,7 @@ const Theme_1 = require("../Theme");
 exports.ThemeProvider = ({ theme = Theme_1.defaultTheme, children, }) => {
     return React.createElement(emotion_theming_1.ThemeProvider, { theme: theme }, children);
 };
+exports.ThemeProvider.displayName = 'ThemeProvider';
 exports.useTheme = () => {
     const theme = react_1.useContext(core_1.ThemeContext);
     if (typeof theme === 'undefined') {

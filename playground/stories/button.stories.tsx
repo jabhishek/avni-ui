@@ -1,11 +1,11 @@
 import React from 'react';
-import { Button } from '@avni-ui/button';
 import { defaultTheme } from '@avni-ui/core/lib/Theme';
 import { ThemeProvider } from '@avni-ui/core/lib/ThemeProvider';
 import { action } from '@storybook/addon-actions';
 import { Box } from '@avni-ui/core';
 import { CSSReset } from '@avni-ui/core/lib/CSSReset';
 import { css, Global } from '@emotion/core';
+import { Button } from '../../packages/button/src/index';
 
 export default {
   title: 'Example Button',
@@ -34,9 +34,13 @@ export const ButtonStory = () => {
           `}
         />
         <Box mb={8}>
-          <input type="number" value={hue} onChange={(e) => setHue(e.target.value)} />
-          <input type="number" value={sat} onChange={(e) => setSat(e.target.value)} />
-          <input type="number" value={lightness} onChange={(e) => setLightness(e.target.value)} />
+          <input type="number" value={hue} onChange={(e: any) => setHue(e.target.value)} />
+          <input type="number" value={sat} onChange={(e: any) => setSat(e.target.value)} />
+          <input
+            type="number"
+            value={lightness}
+            onChange={(e: any) => setLightness(e.target.value)}
+          />
         </Box>
         <Button type="button" baseColor={color} onClick={action('clicked')}>
           Submit
@@ -47,4 +51,7 @@ export const ButtonStory = () => {
 };
 ButtonStory.story = {
   name: 'Button',
+  parameters: {
+    info: { inline: true, source: false },
+  },
 };

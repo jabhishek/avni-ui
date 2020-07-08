@@ -186,3 +186,4 @@ const styles = css`
 export const CSSReset = () => {
   return <Global styles={styles} />;
 };
+CSSReset.displayName = 'CSSReset';

@@ -14,6 +14,7 @@ export const ThemeProvider = ({
 }) => {
   return <EmotionThemeProvider theme={theme}>{children}</EmotionThemeProvider>;
 };
+ThemeProvider.displayName = 'ThemeProvider';
 
 export const useTheme = (): ITheme => {
   const theme = useContext<ITheme>(ThemeContext as Context<ITheme>);

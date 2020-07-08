@@ -3,7 +3,12 @@ import { PseudoBox } from '@avni-ui/core';
 import { useStyles } from './useStyles';
 import { IButtonProps } from './models';
 
-export const Button: React.FC<IButtonProps> = ({
+export { IButtonProps };
+
+/*
+ * Button component
+ *  */
+export const Button: React.FunctionComponent<IButtonProps> = ({
   children,
   type = 'button',
   baseColor,
@@ -26,3 +31,4 @@ export const Button: React.FC<IButtonProps> = ({
     </PseudoBox>
   );
 };
+Button.displayName = 'Button';

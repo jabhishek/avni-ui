@@ -9,16 +9,20 @@
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-links": "^5.3.19",
     "@storybook/addon-notes": "^5.3.19",
+    "@storybook/addon-info": "5.3.19",
     "@storybook/react": "^5.3.19",
     "babel-loader": "^8.1.0",
     "babel-preset-react-app": "^9.1.2",
     "react": "^16.13.1",
-    "react-docgen-typescript-loader": "^3.7.2",
+    "react-docgen-typescript-loader": "3.7.2",
     "react-dom": "^16.13.1",
     "styled-system": "^5.1.5",
     "ts-loader": "^7.0.5"
   },
   "scripts": {
     "storybook": "start-storybook"
+  },
+  "devDependencies": {
+    "path": "^0.12.7"
   }
 }

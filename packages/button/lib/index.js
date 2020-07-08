@@ -39,3 +39,4 @@ exports.Button = (_a) => {
     const styleProps = useStyles_1.useStyles({ baseColor, variant });
     return (React.createElement(core_1.PseudoBox, Object.assign({ as: "button", disabled: isDisabled, "aria-disabled": isDisabled, type: type }, styleProps, props), children));
 };
+exports.Button.displayName = 'Button';

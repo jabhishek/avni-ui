@@ -52,9 +52,13 @@ export const PaletteStory = () => {
         <CSSReset />
         <Box fontFamily="body">
           <Box mb={8}>
-            <input type="number" value={hue} onChange={(e) => setHue(e.target.value)} />
-            <input type="number" value={sat} onChange={(e) => setSat(e.target.value)} />
-            <input type="number" value={lightness} onChange={(e) => setLightness(e.target.value)} />
+            <input type="number" value={hue} onChange={(e: any) => setHue(e.target.value)} />
+            <input type="number" value={sat} onChange={(e: any) => setSat(e.target.value)} />
+            <input
+              type="number"
+              value={lightness}
+              onChange={(e: any) => setLightness(e.target.value)}
+            />
           </Box>
           <div>
             <h2>Original Color</h2>

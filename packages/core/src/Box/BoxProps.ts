@@ -27,4 +27,4 @@ export type StyledSystemProps = LayoutProps &
   OverflowProps &
   TypographyProps;
 
-export type BoxProps = React.AllHTMLAttributes<HTMLElement> & StyledSystemProps;
+export type BoxProps = StyledSystemProps & React.AllHTMLAttributes<HTMLElement>;
