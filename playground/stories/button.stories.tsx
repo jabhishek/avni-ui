@@ -26,10 +26,10 @@ export const ButtonStory = () => {
         <Global
           styles={css`
             html {
-              font-size: 16px;
+              font-size: 62.5%;
             }
             body {
-              font-size: 62.5%;
+              font-size: 1.6rem;
             }
           `}
         />
