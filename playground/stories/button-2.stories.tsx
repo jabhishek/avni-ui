@@ -8,7 +8,7 @@ import { css, Global } from '@emotion/core';
 import { Button } from '../../packages/button/src/index';
 
 export default {
-  title: 'Example Button',
+  title: 'Button Story',
   component: Button,
 };
 

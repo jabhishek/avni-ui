@@ -6,7 +6,6 @@ export type ButtonVariants = 'filled' | 'outline' | 'unstyled' | 'transparent';
 export interface IButtonProps extends BoxProps {
   /**
    * Button content
-   * @ignore
    */
   children: React.ReactNode;
   /** The base color of the button */

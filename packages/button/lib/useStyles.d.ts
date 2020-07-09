@@ -1,10 +1,10 @@
 import { ButtonVariants } from './models';
 export declare const useStyles: ({ baseColor, variant, }: {
     baseColor?: string | undefined;
-    variant?: "filled" | "outline" | "unstyled" | "transparent" | undefined;
+    variant?: "transparent" | "filled" | "outline" | "unstyled" | undefined;
 }) => {
     backgroundColor: string;
-    color: string;
+    color: any;
     _hover: {
         backgroundColor: any;
         boxShadow: string;

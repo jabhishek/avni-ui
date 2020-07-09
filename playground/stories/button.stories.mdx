@@ -1,0 +1,25 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { action } from "@storybook/addon-actions";
+import { Button } from "../../packages/button/src/index";
+
+<Meta title="Button" component={Button} />
+
+# Buttons
+
+Buttons are used to trigger actions within an application.
+
+## Usage
+
+Buttons are used to trigger internal actions within your web applications.
+
+## Primary Buttons
+
+Primary buttons are used as a call to action and indicate the most important action on a page.
+
+<Preview withSource="open" withToolbar>
+  <Story name="Basic button with baseColor">
+    <Button onClick={action('button-click')} baseColor="hsl(100, 50%, 50%)">Hello World</Button>
+  </Story>
+</Preview>
+
+<Props of={Button} exclude={["BoxProps"]}/>

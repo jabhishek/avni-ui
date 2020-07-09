@@ -6,10 +6,12 @@
   "dependencies": {
     "@babel/core": "^7.10.2",
     "@emotion/core": "^10.0.28",
+    "@mdx-js/loader": "^1.6.6",
     "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-docs": "^5.3.19",
+    "@storybook/addon-info": "5.3.19",
     "@storybook/addon-links": "^5.3.19",
     "@storybook/addon-notes": "^5.3.19",
-    "@storybook/addon-info": "5.3.19",
     "@storybook/react": "^5.3.19",
     "babel-loader": "^8.1.0",
     "babel-preset-react-app": "^9.1.2",
