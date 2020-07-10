@@ -26,7 +26,8 @@
     "ts-loader": "^7.0.5"
   },
   "scripts": {
-    "storybook": "start-storybook"
+    "storybook": "start-storybook",
+    "build-storybook": "build-storybook -s public"
   },
   "devDependencies": {
     "path": "^0.12.7"
