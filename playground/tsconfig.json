@@ -12,5 +12,11 @@
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
-  }
+  },
+  "include": [
+    "stories/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
