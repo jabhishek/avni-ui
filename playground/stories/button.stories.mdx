@@ -12,13 +12,23 @@ Buttons are used to trigger actions within an application.
 
 Buttons are used to trigger internal actions within your web applications.
 
-## Primary Buttons
+## Buttons with no baseColor passed
 
-Primary buttons are used as a call to action and indicate the most important action on a page.
+When no baseColor is passed, a default baseColor from theme is used
 
-<Preview withSource="open" withToolbar>
+<Preview withToolbar>
+  <Story name="Basic button">
+    <Button onClick={action('button-click')}>Default baseColor</Button>
+  </Story>
+</Preview>
+
+## Buttons with baseColor passed
+
+When a baseColor is passed, the component creates a palette based on the baseColor and uses it for styling the button
+
+<Preview withToolbar>
   <Story name="Basic button with baseColor">
-    <Button onClick={action('button-click')} baseColor="hsl(100, 50%, 50%)">Hello World</Button>
+    <Button onClick={action('button-click')} baseColor="hsl(100, 50%, 50%)">With baseColor</Button>
   </Story>
 </Preview>
 

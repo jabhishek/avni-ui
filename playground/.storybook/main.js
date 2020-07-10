@@ -5,12 +5,12 @@ module.exports = {
     addons: [
         '@storybook/addon-actions/register',
         '@storybook/addon-links/register',
+        '@storybook/addon-backgrounds/register',
+        '@storybook/addon-contexts/register',
         {
             name: '@storybook/addon-docs',
             options: {
                 configureJSX: true,
-                babelOptions: {},
-                sourceLoaderOptions: null,
             },
         },
     ],
