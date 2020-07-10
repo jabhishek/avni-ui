@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { Box } from '@avni-ui/core';
 import { CSSReset } from '@avni-ui/core/lib/CSSReset';
 import { css, Global } from '@emotion/core';
-import { Button } from '../../packages/button/src/index';
+import { Button } from '@avni-ui/button';
 
 export default {
   title: 'Button Story',
