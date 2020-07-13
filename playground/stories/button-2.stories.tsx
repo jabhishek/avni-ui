@@ -1,9 +1,6 @@
 import React from 'react';
-import { defaultTheme } from '@avni-ui/core/lib/Theme';
-import { ThemeProvider } from '@avni-ui/core/lib/ThemeProvider';
+import { defaultTheme, ThemeProvider, Box, CSSReset } from '@avni-ui/core';
 import { action } from '@storybook/addon-actions';
-import { Box } from '@avni-ui/core';
-import { CSSReset } from '@avni-ui/core/lib/CSSReset';
 import { css, Global } from '@emotion/core';
 import { Button } from '@avni-ui/button';
 
@@ -52,6 +49,12 @@ export const ButtonStory = () => {
 ButtonStory.story = {
   name: 'Button',
   parameters: {
-    info: { inline: true, source: false },
+    info: {
+      inline: true,
+      source: true,
+      header: false,
+      propTables: [Button],
+      TableComponent: () => null,
+    },
   },
 };

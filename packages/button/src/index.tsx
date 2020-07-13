@@ -1,9 +1,19 @@
 import * as React from 'react';
-import { PseudoBox } from '@avni-ui/core';
-import { useStyles } from './useStyles';
+import styled from '@emotion/styled';
+import { ITheme } from '@avni-ui/core';
+import { getStyles, defaultStyle } from './styles/getStyles';
 import { IButtonProps } from './models';
 
 export { IButtonProps };
+
+const StyledButton = styled.button((props: IButtonProps & { theme: ITheme }) => {
+  const { baseColor, theme } = props;
+  const styleProps = getStyles({ baseColor, theme });
+  return {
+    ...defaultStyle(theme),
+    ...styleProps,
+  };
+});
 
 /*
  * Button component
@@ -11,24 +21,13 @@ export { IButtonProps };
 export const Button: React.FunctionComponent<IButtonProps> = ({
   children,
   type = 'button',
-  baseColor,
-  variant,
   isDisabled,
   ...props
 }: IButtonProps) => {
-  const styleProps = useStyles({ baseColor, variant });
-
   return (
-    <PseudoBox
-      as="button"
-      disabled={isDisabled}
-      aria-disabled={isDisabled}
-      type={type}
-      {...styleProps}
-      {...props}
-    >
+    <StyledButton disabled={isDisabled} aria-disabled={isDisabled} type={type} {...props}>
       {children}
-    </PseudoBox>
+    </StyledButton>
   );
 };
 Button.displayName = 'Button';

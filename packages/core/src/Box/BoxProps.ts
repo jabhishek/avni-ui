@@ -28,3 +28,4 @@ export type StyledSystemProps = LayoutProps &
   TypographyProps;
 
 export type BoxProps = StyledSystemProps & React.AllHTMLAttributes<HTMLElement>;
+export type ButtonProps = StyledSystemProps & React.HTMLAttributes<HTMLButtonElement>;

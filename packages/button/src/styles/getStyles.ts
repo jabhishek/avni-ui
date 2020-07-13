@@ -1,15 +1,14 @@
-import { colorUtils, defaultTheme, useTheme } from '@avni-ui/core';
+import { colorUtils, defaultTheme, ITheme } from '@avni-ui/core';
 import get from 'lodash.get';
-import { ButtonVariants } from './models';
+import { ButtonVariants } from '../models';
 
 const { getColor, getContrastingColor, getContrastingTextColor } = colorUtils;
 
-const baseBoxShadow =
+export const baseBoxShadow =
   '0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)';
 const hoverBoxShadow = `0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12)`;
 
-const getColorProps = ({ baseColor, variant }: { baseColor: string; variant: ButtonVariants }) => {
-  console.log('variant', variant);
+const getColorProps = ({ baseColor }: { baseColor: string }) => {
   const color = getColor(baseColor).rgb();
 
   const hoverBgColor = getContrastingColor(baseColor, 1.15);
@@ -18,40 +17,45 @@ const getColorProps = ({ baseColor, variant }: { baseColor: string; variant: But
   return {
     backgroundColor: baseColor,
     color: getContrastingTextColor(color),
-    _hover: {
+    ':hover': {
       backgroundColor: hoverBgColor.hsl().string(),
       boxShadow: hoverBoxShadow,
     },
-    _focus: {
+    ':focus, :active': {
       boxShadow: `0px 0px 1px 2px ${outlineColor}`,
     },
   };
 };
 
-const defaultStyle = {
+export const defaultStyle = (theme: ITheme) => ({
   cursor: 'pointer',
   border: 'none',
   borderRadius: '2px',
   outline: 'none',
   transition: '0.25s all',
-  fontFamily: 'body',
+  fontFamily: theme.fonts.body,
   boxShadow: baseBoxShadow,
+});
+
+const getSizeProps = ({ theme }: { theme: ITheme }) => {
+  return {
+    fontSize: theme.fontSizes.md,
+    padding: `${theme.space.md} ${theme.space.lg}`,
+  };
 };
 
-const getColorFromUserTheme = (baseColor: string): string | undefined => {
-  const theme = useTheme();
-
+const getColorFromUserTheme = (baseColor: string, theme: ITheme): string | undefined => {
   const color = get(theme, `colors.${baseColor}`);
   return color && typeof color === 'string' ? color : undefined;
 };
 
-const getBaseColorToUse = (baseColor: string | undefined): string => {
+const getBaseColorToUse = (baseColor: string | undefined, theme: ITheme): string => {
   if (baseColor) {
     if (getColor(baseColor)) {
       return baseColor;
     }
 
-    const colorFromUserTheme = getColorFromUserTheme(baseColor);
+    const colorFromUserTheme = getColorFromUserTheme(baseColor, theme);
     if (colorFromUserTheme) {
       return colorFromUserTheme;
     }
@@ -60,13 +64,15 @@ const getBaseColorToUse = (baseColor: string | undefined): string => {
   return get(defaultTheme, `colors.primary`);
 };
 
-export const useStyles = ({
+export const getStyles = ({
   baseColor = 'red',
-  variant = 'outline',
+  theme,
 }: {
   baseColor?: string;
   variant?: ButtonVariants;
+  theme: ITheme;
 }) => {
-  const colorProps = getColorProps({ baseColor: getBaseColorToUse(baseColor), variant });
-  return { ...defaultStyle, ...colorProps };
+  const colorProps = getColorProps({ baseColor: getBaseColorToUse(baseColor, theme) });
+  const sizeProps = getSizeProps({ theme });
+  return { ...colorProps, ...sizeProps };
 };

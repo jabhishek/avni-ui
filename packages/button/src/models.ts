@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { BoxProps } from '@avni-ui/core/src/Box/BoxProps';
 
 export type ButtonVariants = 'filled' | 'outline' | 'unstyled' | 'transparent';
+export type SizeVariants = 'xs' | 'sm' | 'md' | 'lg' | 'fullWidth';
 
-export interface IButtonProps extends BoxProps {
+export interface IButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   /**
    * Button content
    */
@@ -16,4 +16,6 @@ export interface IButtonProps extends BoxProps {
   isDisabled?: boolean;
   /** Button type */
   type: 'submit' | 'reset' | 'button' | undefined;
+  /** Button size */
+  size?: SizeVariants | undefined;
 }

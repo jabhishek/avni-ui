@@ -15,13 +15,4 @@ export const defaultTheme: ITheme = {
     '2xl': pxToRem(32),
     '3xl': pxToRem(48),
   },
-  breakpoints: ['20em', '48em', '64em', '114em'], // 320px, 768px, 1024px, 1824px
-  variantTheme: {
-    buttons: {
-      primary: {
-        color: 'white',
-        bgColor: 'primary',
-      },
-    },
-  },
 };

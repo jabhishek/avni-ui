@@ -12,11 +12,4 @@ exports.defaultTheme = Object.assign(Object.assign({}, fonts_1.typography), { co
         xl: fonts_1.pxToRem(24),
         '2xl': fonts_1.pxToRem(32),
         '3xl': fonts_1.pxToRem(48),
-    }, breakpoints: ['20em', '48em', '64em', '114em'], variantTheme: {
-        buttons: {
-            primary: {
-                color: 'white',
-                bgColor: 'primary',
-            },
-        },
     } });

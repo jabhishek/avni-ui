@@ -2,8 +2,6 @@ import { addDecorator, addParameters } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { withContexts } from '@storybook/addon-contexts/react';
 import {contexts} from "./contexts";
-
-import {ThemeProvider, defaultTheme} from "@avni-ui/core";
 import React from "react";
 
 addDecorator(withInfo);

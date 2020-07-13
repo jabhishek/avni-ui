@@ -26,7 +26,16 @@ const fontSizes = {
   '6xl': pxToRem(64),
 };
 
-export const typography = {
+export type Typography = {
+  fonts: {
+    body: string;
+    heading: string;
+    mono: string;
+  };
+  fontSizes: Record<string, string>;
+};
+
+export const typography: Typography = {
   fonts,
   fontSizes,
 };

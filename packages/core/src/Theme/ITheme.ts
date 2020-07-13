@@ -1,12 +1,7 @@
-import { Theme as StyledSystemTheme } from 'styled-system';
+import { Typography } from './utils/fonts';
+import { Colors } from './utils/colors';
 
-export type ButtonVariantTheme = {
-  color?: string;
-  bgColor?: string;
-};
-
-export interface ITheme extends StyledSystemTheme {
-  variantTheme?: {
-    buttons: Record<string, ButtonVariantTheme>;
-  };
+export interface ITheme extends Typography {
+  colors: Colors;
+  space: Record<string, number | string>;
 }

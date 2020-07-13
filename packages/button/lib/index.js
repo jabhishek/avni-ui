@@ -29,14 +29,21 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Button = void 0;
 const React = __importStar(require("react"));
-const core_1 = require("@avni-ui/core");
-const useStyles_1 = require("./useStyles");
+const styled_1 = __importDefault(require("@emotion/styled"));
+const getStyles_1 = require("./styles/getStyles");
+const StyledButton = styled_1.default.button((props) => {
+    const { baseColor, theme } = props;
+    const styleProps = getStyles_1.getStyles({ baseColor, theme });
+    return Object.assign(Object.assign({}, getStyles_1.defaultStyle(theme)), styleProps);
+});
 exports.Button = (_a) => {
-    var { children, type = 'button', baseColor, variant, isDisabled } = _a, props = __rest(_a, ["children", "type", "baseColor", "variant", "isDisabled"]);
-    const styleProps = useStyles_1.useStyles({ baseColor, variant });
-    return (React.createElement(core_1.PseudoBox, Object.assign({ as: "button", disabled: isDisabled, "aria-disabled": isDisabled, type: type }, styleProps, props), children));
+    var { children, type = 'button', isDisabled } = _a, props = __rest(_a, ["children", "type", "isDisabled"]);
+    return (React.createElement(StyledButton, Object.assign({ disabled: isDisabled, "aria-disabled": isDisabled, type: type }, props), children));
 };
 exports.Button.displayName = 'Button';

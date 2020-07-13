@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-    stories: ['../stories/**/*.stories.(tsx|mdx)'],
+    stories: ['../stories/**/*.stories.(mdx)'],
     addons: [
         '@storybook/addon-actions/register',
         '@storybook/addon-links/register',
@@ -11,6 +11,7 @@ module.exports = {
             name: '@storybook/addon-docs',
             options: {
                 configureJSX: true,
+                sourceLoaderOptions: null,
             },
         },
     ],
@@ -19,9 +20,11 @@ module.exports = {
                 test: /\.(ts|tsx)$/,
                 use: [
                     require.resolve('ts-loader'),
+/*
                     {
                         loader: require.resolve('react-docgen-typescript-loader')
                     },
+*/
                 ],
             }
             );
