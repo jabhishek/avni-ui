@@ -39,12 +39,15 @@ export const getContrastingTextColor = (color: any, darkColor = '#000', lightCol
 };
 
 const contrasts = [0.15, 0.3, 0.5, 0.7, 0.85, 1, 0.85, 0.7, 0.5, 0.35];
+const colorWeights = ['50', '100', '300', '400', '500', '600', '700', '800', '900'];
 
 type PaletteColor = {
   color: string;
   contrastToWhite: number;
   contrastToBlack: number;
 };
+
+type Palette = Record<string, PaletteColor>;
 
 const stringifyColor = (color: any): string => {
   return color.hsl().toString();
@@ -58,23 +61,24 @@ const getPaletteColor = (paletteColor: any): PaletteColor => {
   };
 };
 
-export const createPalette = (baseColor: string): Array<PaletteColor> => {
+export const createPalette = (baseColor: string): Palette => {
   const color = Color(baseColor).rgb();
   console.log('initial color', stringifyColor(color));
 
-  const mainPalette = [];
+  const mainPalette: Palette = {};
   const mainColor = color;
   let paletteColor;
 
   for (let index = 0; index < 10; index++) {
+    const colorWeight = colorWeights[index];
     if (index < 5) {
       paletteColor = Color('white').mix(mainColor, contrasts[index]);
-      mainPalette.push(getPaletteColor(paletteColor));
+      mainPalette[colorWeight] = getPaletteColor(paletteColor);
     } else if (index === 5) {
-      mainPalette.push(getPaletteColor(mainColor));
+      mainPalette[colorWeight] = getPaletteColor(mainColor);
     } else if (index >= 6) {
       paletteColor = Color('black').mix(mainColor, contrasts[index]);
-      mainPalette.push(getPaletteColor(paletteColor));
+      mainPalette[colorWeight] = getPaletteColor(paletteColor);
     }
   }
 

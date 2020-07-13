@@ -9,13 +9,13 @@ const lodash_get_1 = __importDefault(require("lodash.get"));
 const { getColor, getContrastingColor, getContrastingTextColor } = core_1.colorUtils;
 exports.baseBoxShadow = '0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)';
 const hoverBoxShadow = `0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12)`;
-const getColorProps = ({ baseColor }) => {
+const getColorProps = ({ baseColor, theme }) => {
     const color = getColor(baseColor).rgb();
     const hoverBgColor = getContrastingColor(baseColor, 1.15);
     const outlineColor = getContrastingColor(baseColor, 3);
     return {
         backgroundColor: baseColor,
-        color: getContrastingTextColor(color),
+        color: getContrastingTextColor(color, theme.colors.textBlack),
         ':hover': {
             backgroundColor: hoverBgColor.hsl().string(),
             boxShadow: hoverBoxShadow,
@@ -25,15 +25,14 @@ const getColorProps = ({ baseColor }) => {
         },
     };
 };
-exports.defaultStyle = (theme) => ({
+exports.defaultStyle = {
     cursor: 'pointer',
     border: 'none',
     borderRadius: '2px',
     outline: 'none',
     transition: '0.25s all',
-    fontFamily: theme.fonts.body,
     boxShadow: exports.baseBoxShadow,
-});
+};
 const getSizeProps = ({ theme }) => {
     return {
         fontSize: theme.fontSizes.md,
@@ -46,18 +45,18 @@ const getColorFromUserTheme = (baseColor, theme) => {
 };
 const getBaseColorToUse = (baseColor, theme) => {
     if (baseColor) {
-        if (getColor(baseColor)) {
-            return baseColor;
-        }
         const colorFromUserTheme = getColorFromUserTheme(baseColor, theme);
         if (colorFromUserTheme) {
             return colorFromUserTheme;
         }
+        if (getColor(baseColor)) {
+            return baseColor;
+        }
     }
-    return lodash_get_1.default(core_1.defaultTheme, `colors.primary`);
+    return core_1.defaultTheme.colors.primary;
 };
-exports.getStyles = ({ baseColor = 'red', theme, }) => {
-    const colorProps = getColorProps({ baseColor: getBaseColorToUse(baseColor, theme) });
+exports.getStyles = ({ baseColor, theme, }) => {
+    const colorProps = getColorProps({ baseColor: getBaseColorToUse(baseColor, theme), theme });
     const sizeProps = getSizeProps({ theme });
     return Object.assign(Object.assign({}, colorProps), sizeProps);
 };

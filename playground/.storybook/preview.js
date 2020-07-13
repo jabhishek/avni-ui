@@ -3,13 +3,32 @@ import { withInfo } from '@storybook/addon-info';
 import { withContexts } from '@storybook/addon-contexts/react';
 import {contexts} from "./contexts";
 import React from "react";
+import {ThemeProvider, defaultTheme, CSSReset} from "@avni-ui/core";
+import {css, Global} from "@emotion/core";
 
 addDecorator(withInfo);
 addDecorator(withContexts(contexts));
 
 addParameters({
     backgrounds: [
-        { name: 'Default Theme', value: '#fafafa', default: true },
+        { name: 'Default Theme', value: 'aliceblue', default: true },
         { name: 'Dark Theme', value: '#121212' },
     ]
 })
+
+addDecorator(storyFn => <ThemeProvider theme={defaultTheme}>
+    <CSSReset />
+    <Global
+        styles={css`
+            html {
+              font-size: 62.5%;
+            }
+            body {
+              font-size: 1.6rem;
+              font-family: ${defaultTheme.fonts.body};
+              color: ${defaultTheme.colors.textBlack};
+            }
+          `}
+    />
+    {storyFn()}
+</ThemeProvider>);

@@ -66,7 +66,7 @@ export const PaletteStory = () => {
           </div>
           <div>
             <h2>Palette</h2>
-            {palette.map(({ color, contrastToWhite, contrastToBlack }, index) => {
+            {Object.values(palette).map(({ color, contrastToWhite, contrastToBlack }, index) => {
               return (
                 <ColorBox
                   key={index}

@@ -10,14 +10,11 @@ const StyledButton = styled.button((props: IButtonProps & { theme: ITheme }) => 
   const { baseColor, theme } = props;
   const styleProps = getStyles({ baseColor, theme });
   return {
-    ...defaultStyle(theme),
+    ...defaultStyle,
     ...styleProps,
   };
 });
 
-/*
- * Button component
- *  */
 export const Button: React.FunctionComponent<IButtonProps> = ({
   children,
   type = 'button',

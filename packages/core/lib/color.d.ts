@@ -6,5 +6,6 @@ declare type PaletteColor = {
     contrastToWhite: number;
     contrastToBlack: number;
 };
-export declare const createPalette: (baseColor: string) => Array<PaletteColor>;
+declare type Palette = Record<string, PaletteColor>;
+export declare const createPalette: (baseColor: string) => Palette;
 export {};

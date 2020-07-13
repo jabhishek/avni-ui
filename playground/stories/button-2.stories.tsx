@@ -10,9 +10,9 @@ export default {
 };
 
 export const ButtonStory = () => {
-  const [hue, setHue] = React.useState<string>('0');
-  const [sat, setSat] = React.useState<string>('100');
-  const [lightness, setLightness] = React.useState<string>('72');
+  const [hue, setHue] = React.useState<string>('210');
+  const [sat, setSat] = React.useState<string>('79');
+  const [lightness, setLightness] = React.useState<string>('46');
 
   const color = `hsl(${hue}, ${sat}%, ${lightness || '0'}%)`;
 

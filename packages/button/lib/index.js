@@ -40,7 +40,7 @@ const getStyles_1 = require("./styles/getStyles");
 const StyledButton = styled_1.default.button((props) => {
     const { baseColor, theme } = props;
     const styleProps = getStyles_1.getStyles({ baseColor, theme });
-    return Object.assign(Object.assign({}, getStyles_1.defaultStyle(theme)), styleProps);
+    return Object.assign(Object.assign({}, getStyles_1.defaultStyle), styleProps);
 });
 exports.Button = (_a) => {
     var { children, type = 'button', isDisabled } = _a, props = __rest(_a, ["children", "type", "isDisabled"]);
