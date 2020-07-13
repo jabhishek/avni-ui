@@ -11,7 +11,7 @@ export declare const defaultStyle: {
 };
 export declare const getStyles: ({ baseColor, theme, }: {
     baseColor?: string | undefined;
-    variant?: "filled" | "outline" | "unstyled" | "transparent" | undefined;
+    variant?: "transparent" | "filled" | "outline" | "unstyled" | undefined;
     theme: ITheme;
 }) => {
     fontSize: string;

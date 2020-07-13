@@ -11,7 +11,7 @@
     "jsx": "react",
     "sourceMap": false,
     "lib": [
-      "es6"
+      "es6", "dom", "dom.iterable"
     ],
     "strict": true,
     "alwaysStrict": true
