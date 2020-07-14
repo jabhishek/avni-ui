@@ -31,7 +31,8 @@ const ColorBox = ({
       >
         Color
       </Box>
-      {color} - {contrastToWhite.toFixed(2)} - {contrastToBlack.toFixed(2)}
+      {color}
+      {/* - {contrastToWhite.toFixed(2)} - {contrastToBlack.toFixed(2)}*/}
     </Box>
   );
 };
@@ -61,8 +62,8 @@ export const PaletteStory = () => {
             />
           </Box>
           <div>
-            <h2>Original Color</h2>
-            <ColorBox color={color} contrastToWhite={0} contrastToBlack={0} />
+            <h2>Selected Color</h2>
+            <Box bg={color} height={40} width={150} />
           </div>
           <div>
             <h2>Palette</h2>

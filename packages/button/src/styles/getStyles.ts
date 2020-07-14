@@ -1,28 +1,40 @@
-import { colorUtils, defaultTheme, ITheme } from '@avni-ui/core';
+import { colorUtils, defaultTheme, ITheme, ThemeColor, Palette } from '@avni-ui/core';
 import get from 'lodash.get';
 import { ButtonVariants } from '../models';
 
-const { getColor, getContrastingColor, getContrastingTextColor } = colorUtils;
+const { getColor, getContrastingTextColor, createPalette } = colorUtils;
 
 export const baseBoxShadow =
   '0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)';
 const hoverBoxShadow = `0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12)`;
 
-const getColorProps = ({ baseColor, theme }: { baseColor: string; theme: ITheme }) => {
-  const color = getColor(baseColor).rgb();
+const getPalette = (baseColor: string | Palette): Palette => {
+  if (typeof baseColor === 'string') {
+    return createPalette(baseColor);
+  }
 
-  const hoverBgColor = getContrastingColor(baseColor, 1.15);
-  const outlineColor = getContrastingColor(baseColor, 3);
+  return baseColor;
+};
+
+const getColorProps = ({ baseColor, theme }: { baseColor: ThemeColor; theme: ITheme }) => {
+  const palette: Palette = getPalette(baseColor);
+
+  const color = palette['500'].color;
+
+  const hoverBgColor = palette['400'].color;
+  const outlineColor = palette['600'].color;
 
   return {
-    backgroundColor: baseColor,
+    backgroundColor: color,
     color: getContrastingTextColor(color, theme.colors.textBlack),
     ':hover': {
-      backgroundColor: hoverBgColor.hsl().string(),
+      backgroundColor: hoverBgColor,
       boxShadow: hoverBoxShadow,
     },
     ':focus, :active': {
-      boxShadow: `0px 0px 1px 2px ${outlineColor}`,
+      outline: `1px solid ${outlineColor}`,
+      outlineOffset: '2px',
+      boxShadow: `none`,
     },
   };
 };
@@ -32,7 +44,7 @@ export const defaultStyle = {
   border: 'none',
   borderRadius: '2px',
   outline: 'none',
-  transition: '0.25s all',
+  transition: '0.25s background-color, 0.25s color',
   boxShadow: baseBoxShadow,
 };
 
@@ -48,7 +60,7 @@ const getColorFromUserTheme = (baseColor: string, theme: ITheme): string | undef
   return color && typeof color === 'string' ? color : undefined;
 };
 
-const getBaseColorToUse = (baseColor: string | undefined, theme: ITheme): string => {
+const getBaseColorToUse = (baseColor: string | undefined, theme: ITheme): ThemeColor => {
   if (baseColor) {
     // check if it's a color defined in theme
     const colorFromUserTheme = getColorFromUserTheme(baseColor, theme);

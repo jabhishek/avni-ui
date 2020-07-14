@@ -1,6 +1,2 @@
-export declare type Colors = {
-    primary: string;
-    white: string;
-    black: string;
-} & Record<string, string>;
+import { Colors } from './types';
 export declare const colors: Colors;

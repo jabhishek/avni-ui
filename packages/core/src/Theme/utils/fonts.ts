@@ -1,3 +1,5 @@
+import { Typography } from './types';
+
 const body = 'Roboto, sans-serif';
 const heading = 'Roboto Slab, serif';
 const mono = 'Roboto mono, monospace';
@@ -24,15 +26,6 @@ const fontSizes = {
   '4xl': pxToRem(36),
   '5xl': pxToRem(48),
   '6xl': pxToRem(64),
-};
-
-export type Typography = {
-  fonts: {
-    body: string;
-    heading: string;
-    mono: string;
-  };
-  fontSizes: Record<string, string>;
 };
 
 export const typography: Typography = {

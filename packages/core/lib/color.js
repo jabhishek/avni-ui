@@ -25,14 +25,15 @@ exports.getContrastingColor = (baseColor, contrastLevel) => {
     return color2;
 };
 exports.getContrastingTextColor = (color, darkColor = '#000', lightColor = '#fff') => {
+    const colorObj = exports.getColor(color);
     const darkColorObj = exports.getColor(darkColor);
     const lightColorObj = exports.getColor(lightColor);
-    const contrastWithDark = color.contrast(darkColorObj);
-    const contrastWithLight = color.contrast(lightColorObj);
+    const contrastWithDark = colorObj.contrast(darkColorObj);
+    const contrastWithLight = colorObj.contrast(lightColorObj);
     return contrastWithDark > contrastWithLight ? darkColor : lightColor;
 };
 const contrasts = [0.15, 0.3, 0.5, 0.7, 0.85, 1, 0.85, 0.7, 0.5, 0.35];
-const colorWeights = ['50', '100', '300', '400', '500', '600', '700', '800', '900'];
+const colorWeights = ['50', '100', '200', '300', '400', '500', '600', '700', '800', '900'];
 const stringifyColor = (color) => {
     return color.hsl().toString();
 };
@@ -45,7 +46,6 @@ const getPaletteColor = (paletteColor) => {
 };
 exports.createPalette = (baseColor) => {
     const color = Color(baseColor).rgb();
-    console.log('initial color', stringifyColor(color));
     const mainPalette = {};
     const mainColor = color;
     let paletteColor;

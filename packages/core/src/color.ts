@@ -1,4 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
+import { Palette, PaletteColor } from './Theme/utils/types';
+
 const Color = require('color');
 
 export const getColor = function getColor(color: string): any {
@@ -28,26 +30,23 @@ export const getContrastingColor = (baseColor: string, contrastLevel: number) =>
   return color2;
 };
 
-export const getContrastingTextColor = (color: any, darkColor = '#000', lightColor = '#fff') => {
+export const getContrastingTextColor = (color: string, darkColor = '#000', lightColor = '#fff') => {
+  const colorObj = getColor(color);
+  // Another approach, but it works only for black and white text colors
+  // const y = (0.2126 * (R / 255)) ^ (2.2 + 0.7151 * (G / 255)) ^ (2.2 + 0.0721 * (B / 255)) ^ 2.2;
+  // if y > 0.18 use black otherwise use white
+
   const darkColorObj = getColor(darkColor);
   const lightColorObj = getColor(lightColor);
 
-  const contrastWithDark = color.contrast(darkColorObj);
-  const contrastWithLight = color.contrast(lightColorObj);
+  const contrastWithDark = colorObj.contrast(darkColorObj);
+  const contrastWithLight = colorObj.contrast(lightColorObj);
 
   return contrastWithDark > contrastWithLight ? darkColor : lightColor;
 };
 
 const contrasts = [0.15, 0.3, 0.5, 0.7, 0.85, 1, 0.85, 0.7, 0.5, 0.35];
-const colorWeights = ['50', '100', '300', '400', '500', '600', '700', '800', '900'];
-
-type PaletteColor = {
-  color: string;
-  contrastToWhite: number;
-  contrastToBlack: number;
-};
-
-type Palette = Record<string, PaletteColor>;
+const colorWeights = ['50', '100', '200', '300', '400', '500', '600', '700', '800', '900'];
 
 const stringifyColor = (color: any): string => {
   return color.hsl().toString();
@@ -63,7 +62,6 @@ const getPaletteColor = (paletteColor: any): PaletteColor => {
 
 export const createPalette = (baseColor: string): Palette => {
   const color = Color(baseColor).rgb();
-  console.log('initial color', stringifyColor(color));
 
   const mainPalette: Palette = {};
   const mainColor = color;

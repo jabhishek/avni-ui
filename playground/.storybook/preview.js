@@ -27,6 +27,7 @@ addDecorator(storyFn => <ThemeProvider theme={defaultTheme}>
               font-size: 1.6rem;
               font-family: ${defaultTheme.fonts.body};
               color: ${defaultTheme.colors.textBlack};
+              padding: 20px;
             }
           `}
     />

@@ -19,10 +19,12 @@ export declare const getStyles: ({ baseColor, theme, }: {
     backgroundColor: string;
     color: string;
     ':hover': {
-        backgroundColor: any;
+        backgroundColor: string;
         boxShadow: string;
     };
     ':focus, :active': {
+        outline: string;
+        outlineOffset: string;
         boxShadow: string;
     };
 };
