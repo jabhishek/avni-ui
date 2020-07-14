@@ -4,6 +4,7 @@ import { ThemeProvider } from '@avni-ui/core/lib/ThemeProvider';
 import { Box } from '@avni-ui/core';
 import { CSSReset } from '@avni-ui/core/lib/CSSReset';
 import { createSwatch } from '@avni-ui/core/lib/color';
+import { createSwatch as createColorSwatch } from '@avni-ui/color';
 
 export default {
   title: 'Swatch',
@@ -43,9 +44,10 @@ export const SwatchStory = () => {
   const [lightness, setLightness] = React.useState<string>('72');
 
   const color = `hsl(${hue}, ${sat}%, ${lightness || '0'}%)`;
-  const swatch = createSwatch(color);
+  const swatch = createColorSwatch(color);
+  const swatch2 = createSwatch(color);
 
-  console.log('swatch', swatch);
+  console.log('swatch', swatch, swatch2);
 
   return (
     <ThemeProvider theme={defaultTheme}>

@@ -14,7 +14,8 @@
       "es6", "dom", "dom.iterable"
     ],
     "strict": true,
-    "alwaysStrict": true
+    "alwaysStrict": true,
+    "moduleResolution": "Node"
   },
   "exclude": [
     "node_modules",

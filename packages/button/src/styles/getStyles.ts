@@ -1,8 +1,7 @@
-import { colorUtils, defaultTheme, ITheme, ThemeColor, Swatch } from '@avni-ui/core';
+import { defaultTheme, ITheme, ThemeColor, Swatch } from '@avni-ui/core';
 import get from 'lodash.get';
+import { getContrastingTextColor, createSwatch } from '@avni-ui/color';
 import { ButtonVariants } from '../models';
-
-const { getColor, getContrastingTextColor, createSwatch } = colorUtils;
 
 export const baseBoxShadow =
   '0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)';
@@ -18,6 +17,8 @@ const getSwatch = (baseColor: string | Swatch): Swatch => {
 
 const getColorProps = ({ baseColor, theme }: { baseColor: ThemeColor; theme: ITheme }) => {
   const swatch: Swatch = getSwatch(baseColor);
+
+  console.log('swatch', swatch);
 
   const color = swatch['500'].color;
 
@@ -68,10 +69,7 @@ const getBaseColorToUse = (baseColor: string | undefined, theme: ITheme): ThemeC
       return colorFromUserTheme;
     }
 
-    // check if a valid color is directly passed
-    if (getColor(baseColor)) {
-      return baseColor;
-    }
+    return baseColor;
   }
 
   // primary color from the theme
