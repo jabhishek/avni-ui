@@ -6,13 +6,13 @@ export declare type Typography = {
     };
     fontSizes: Record<string, string>;
 };
-export declare type PaletteColor = {
+export declare type SwatchColor = {
     color: string;
     contrastToWhite: number;
     contrastToBlack: number;
 };
-export declare type Palette = Record<string, PaletteColor>;
-export declare type ThemeColor = string | Palette;
+export declare type Swatch = Record<string, SwatchColor>;
+export declare type ThemeColor = string | Swatch;
 export declare type Colors = {
     primary: ThemeColor;
     white: string;

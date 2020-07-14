@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createPalette = exports.getContrastingTextColor = exports.getContrastingColor = exports.getColor = void 0;
+exports.createSwatch = exports.getContrastingTextColor = exports.getContrastingColor = exports.getColor = void 0;
 const Color = require('color');
 exports.getColor = function getColor(color) {
     return Color(color);
@@ -37,31 +37,31 @@ const colorWeights = ['50', '100', '200', '300', '400', '500', '600', '700', '80
 const stringifyColor = (color) => {
     return color.hsl().toString();
 };
-const getPaletteColor = (paletteColor) => {
+const getSwatchColor = (swatchColor) => {
     return {
-        color: stringifyColor(paletteColor),
-        contrastToWhite: paletteColor.contrast(Color('#fff')),
-        contrastToBlack: paletteColor.contrast(Color('#000')),
+        color: stringifyColor(swatchColor),
+        contrastToWhite: swatchColor.contrast(Color('#fff')),
+        contrastToBlack: swatchColor.contrast(Color('#000')),
     };
 };
-exports.createPalette = (baseColor) => {
+exports.createSwatch = (baseColor) => {
     const color = Color(baseColor).rgb();
-    const mainPalette = {};
+    const mainSwatch = {};
     const mainColor = color;
-    let paletteColor;
+    let swatchColor;
     for (let index = 0; index < 10; index++) {
         const colorWeight = colorWeights[index];
         if (index < 5) {
-            paletteColor = Color('white').mix(mainColor, contrasts[index]);
-            mainPalette[colorWeight] = getPaletteColor(paletteColor);
+            swatchColor = Color('white').mix(mainColor, contrasts[index]);
+            mainSwatch[colorWeight] = getSwatchColor(swatchColor);
         }
         else if (index === 5) {
-            mainPalette[colorWeight] = getPaletteColor(mainColor);
+            mainSwatch[colorWeight] = getSwatchColor(mainColor);
         }
         else if (index >= 6) {
-            paletteColor = Color('black').mix(mainColor, contrasts[index]);
-            mainPalette[colorWeight] = getPaletteColor(paletteColor);
+            swatchColor = Color('black').mix(mainColor, contrasts[index]);
+            mainSwatch[colorWeight] = getSwatchColor(swatchColor);
         }
     }
-    return mainPalette;
+    return mainSwatch;
 };

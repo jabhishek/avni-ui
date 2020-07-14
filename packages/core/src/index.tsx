@@ -5,6 +5,4 @@ export { ITheme } from './Theme/ITheme';
 export { ThemeProvider, useTheme } from './ThemeProvider';
 export * as colorUtils from './color';
 export { CSSReset } from './CSSReset';
-export { ThemeColor } from './Theme/utils/types';
-export { Palette } from './Theme/utils/types';
-export { PaletteColor } from './Theme/utils/types';
+export { ThemeColor, Swatch, SwatchColor } from './Theme/utils/types';

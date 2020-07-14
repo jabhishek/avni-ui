@@ -1,28 +1,28 @@
-import { colorUtils, defaultTheme, ITheme, ThemeColor, Palette } from '@avni-ui/core';
+import { colorUtils, defaultTheme, ITheme, ThemeColor, Swatch } from '@avni-ui/core';
 import get from 'lodash.get';
 import { ButtonVariants } from '../models';
 
-const { getColor, getContrastingTextColor, createPalette } = colorUtils;
+const { getColor, getContrastingTextColor, createSwatch } = colorUtils;
 
 export const baseBoxShadow =
   '0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)';
 const hoverBoxShadow = `0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12)`;
 
-const getPalette = (baseColor: string | Palette): Palette => {
+const getSwatch = (baseColor: string | Swatch): Swatch => {
   if (typeof baseColor === 'string') {
-    return createPalette(baseColor);
+    return createSwatch(baseColor);
   }
 
   return baseColor;
 };
 
 const getColorProps = ({ baseColor, theme }: { baseColor: ThemeColor; theme: ITheme }) => {
-  const palette: Palette = getPalette(baseColor);
+  const swatch: Swatch = getSwatch(baseColor);
 
-  const color = palette['500'].color;
+  const color = swatch['500'].color;
 
-  const hoverBgColor = palette['400'].color;
-  const outlineColor = palette['600'].color;
+  const hoverBgColor = swatch['400'].color;
+  const outlineColor = swatch['600'].color;
 
   return {
     backgroundColor: color,

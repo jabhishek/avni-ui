@@ -7,14 +7,14 @@ export type Typography = {
   fontSizes: Record<string, string>;
 };
 
-export type PaletteColor = {
+export type SwatchColor = {
   color: string;
   contrastToWhite: number;
   contrastToBlack: number;
 };
 
-export type Palette = Record<string, PaletteColor>;
-export type ThemeColor = string | Palette;
+export type Swatch = Record<string, SwatchColor>;
+export type ThemeColor = string | Swatch;
 
 export type Colors = {
   primary: ThemeColor;

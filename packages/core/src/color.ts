@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-import { Palette, PaletteColor } from './Theme/utils/types';
+import { Swatch, SwatchColor } from './Theme/utils/types';
 
 const Color = require('color');
 
@@ -52,33 +52,33 @@ const stringifyColor = (color: any): string => {
   return color.hsl().toString();
 };
 
-const getPaletteColor = (paletteColor: any): PaletteColor => {
+const getSwatchColor = (swatchColor: any): SwatchColor => {
   return {
-    color: stringifyColor(paletteColor),
-    contrastToWhite: paletteColor.contrast(Color('#fff')),
-    contrastToBlack: paletteColor.contrast(Color('#000')),
+    color: stringifyColor(swatchColor),
+    contrastToWhite: swatchColor.contrast(Color('#fff')),
+    contrastToBlack: swatchColor.contrast(Color('#000')),
   };
 };
 
-export const createPalette = (baseColor: string): Palette => {
+export const createSwatch = (baseColor: string): Swatch => {
   const color = Color(baseColor).rgb();
 
-  const mainPalette: Palette = {};
+  const mainSwatch: Swatch = {};
   const mainColor = color;
-  let paletteColor;
+  let swatchColor;
 
   for (let index = 0; index < 10; index++) {
     const colorWeight = colorWeights[index];
     if (index < 5) {
-      paletteColor = Color('white').mix(mainColor, contrasts[index]);
-      mainPalette[colorWeight] = getPaletteColor(paletteColor);
+      swatchColor = Color('white').mix(mainColor, contrasts[index]);
+      mainSwatch[colorWeight] = getSwatchColor(swatchColor);
     } else if (index === 5) {
-      mainPalette[colorWeight] = getPaletteColor(mainColor);
+      mainSwatch[colorWeight] = getSwatchColor(mainColor);
     } else if (index >= 6) {
-      paletteColor = Color('black').mix(mainColor, contrasts[index]);
-      mainPalette[colorWeight] = getPaletteColor(paletteColor);
+      swatchColor = Color('black').mix(mainColor, contrasts[index]);
+      mainSwatch[colorWeight] = getSwatchColor(swatchColor);
     }
   }
 
-  return mainPalette;
+  return mainSwatch;
 };

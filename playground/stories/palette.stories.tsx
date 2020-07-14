@@ -3,10 +3,10 @@ import { defaultTheme } from '@avni-ui/core/lib/Theme';
 import { ThemeProvider } from '@avni-ui/core/lib/ThemeProvider';
 import { Box } from '@avni-ui/core';
 import { CSSReset } from '@avni-ui/core/lib/CSSReset';
-import { createPalette } from '@avni-ui/core/lib/color';
+import { createSwatch } from '@avni-ui/core/lib/color';
 
 export default {
-  title: 'Palette',
+  title: 'Swatch',
 };
 
 const ColorBox = ({
@@ -37,15 +37,15 @@ const ColorBox = ({
   );
 };
 
-export const PaletteStory = () => {
+export const SwatchStory = () => {
   const [hue, setHue] = React.useState<string>('0');
   const [sat, setSat] = React.useState<string>('100');
   const [lightness, setLightness] = React.useState<string>('72');
 
   const color = `hsl(${hue}, ${sat}%, ${lightness || '0'}%)`;
-  const palette = createPalette(color);
+  const swatch = createSwatch(color);
 
-  console.log('palette', palette);
+  console.log('swatch', swatch);
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -66,8 +66,8 @@ export const PaletteStory = () => {
             <Box bg={color} height={40} width={150} />
           </div>
           <div>
-            <h2>Palette</h2>
-            {Object.values(palette).map(({ color, contrastToWhite, contrastToBlack }, index) => {
+            <h2>Swatch</h2>
+            {Object.values(swatch).map(({ color, contrastToWhite, contrastToBlack }, index) => {
               return (
                 <ColorBox
                   key={index}
@@ -83,6 +83,6 @@ export const PaletteStory = () => {
     </ThemeProvider>
   );
 };
-PaletteStory.story = {
-  name: 'Palette',
+SwatchStory.story = {
+  name: 'Swatch',
 };
