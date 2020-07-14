@@ -11,20 +11,26 @@ export declare const defaultStyle: {
 };
 export declare const getStyles: ({ baseColor, theme, }: {
     baseColor?: string | undefined;
-    variant?: "transparent" | "filled" | "outline" | "unstyled" | undefined;
+    variant?: "filled" | "outline" | "unstyled" | "transparent" | undefined;
     theme: ITheme;
 }) => {
     fontSize: string;
     padding: string;
+    minWidth: number;
     backgroundColor: string;
     color: string;
-    ':hover': {
+    ':hover:enabled': {
         backgroundColor: string;
         boxShadow: string;
     };
-    ':focus, :active': {
+    ':focus:enabled, :active:enabled': {
         outline: string;
         outlineOffset: string;
         boxShadow: string;
+    };
+    ':disabled': {
+        opacity: number;
+        boxShadow: string;
+        cursor: string;
     };
 };

@@ -43,7 +43,7 @@ export const SwatchStory = () => {
   const [sat, setSat] = React.useState<string>('100');
   const [lightness, setLightness] = React.useState<string>('72');
 
-  const color = `hsl(${hue}, ${sat}%, ${lightness || '0'}%)`;
+  const color = `hsl(${hue || 0}, ${sat || 0}%, ${lightness || '0'}%)`;
   const swatch = createColorSwatch(color);
   const swatch2 = createSwatch(color);
 

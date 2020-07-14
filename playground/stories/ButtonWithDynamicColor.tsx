@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { action } from '@storybook/addon-actions';
 import { Box } from '@avni-ui/core';
 import { Button } from '@avni-ui/button';
 
 export const ButtonWithDynamicColor = () => {
-  const [hue, setHue] = React.useState<string>('210');
-  const [sat, setSat] = React.useState<string>('79');
-  const [lightness, setLightness] = React.useState<string>('46');
+  const [hue, setHue] = React.useState<string>('10');
+  const [sat, setSat] = React.useState<string>('100');
+  const [lightness, setLightness] = React.useState<string>('40');
 
   const color = `hsl(${hue}, ${sat}%, ${lightness || '0'}%)`;
 
@@ -21,9 +20,14 @@ export const ButtonWithDynamicColor = () => {
           onChange={(e: any) => setLightness(e.target.value || '0')}
         />
       </Box>
-      <Button type="button" baseColor={color} onClick={action('clicked')}>
-        Dynamic baseColor
-      </Button>
+      <Box display="grid" gridTemplateColumns="repeat(3, 1fr)" gridGap={8}>
+        <Button type="button" baseColor={color}>
+          Dynamic baseColor
+        </Button>
+        <Button type="button" baseColor={color} isDisabled>
+          Disabled
+        </Button>
+      </Box>
     </React.Fragment>
   );
 };

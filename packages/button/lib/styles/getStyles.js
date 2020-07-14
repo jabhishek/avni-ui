@@ -24,14 +24,19 @@ const getColorProps = ({ baseColor, theme }) => {
     return {
         backgroundColor: color,
         color: color_1.getContrastingTextColor(color, theme.colors.textBlack),
-        ':hover': {
+        ':hover:enabled': {
             backgroundColor: hoverBgColor,
             boxShadow: hoverBoxShadow,
         },
-        ':focus, :active': {
+        ':focus:enabled, :active:enabled': {
             outline: `1px solid ${outlineColor}`,
             outlineOffset: '2px',
             boxShadow: `none`,
+        },
+        ':disabled': {
+            opacity: 0.2,
+            boxShadow: 'none',
+            cursor: 'not-allowed',
         },
     };
 };
@@ -47,6 +52,7 @@ const getSizeProps = ({ theme }) => {
     return {
         fontSize: theme.fontSizes.md,
         padding: `${theme.space.md} ${theme.space.lg}`,
+        minWidth: 100,
     };
 };
 const getColorFromUserTheme = (baseColor, theme) => {
