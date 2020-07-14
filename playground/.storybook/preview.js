@@ -22,18 +22,12 @@ addDecorator(storyFn => <ThemeProvider theme={defaultTheme}>
         styles={css`
             html {
               font-size: 62.5%;
-              box-sizing: border-box;
             }
             body {
               font-size: 1.6rem;
               font-family: ${defaultTheme.fonts.body};
               color: ${defaultTheme.colors.textBlack};
               padding: 20px;
-              -webkit-font-smoothing: antialiased;
-              -moz-osx-font-smoothing: grayscale;
-            }
-            *, *:before, *:after {
-               box-sizing: inherit;
             }
           `}
     />

@@ -20,9 +20,9 @@ export const ButtonWithDynamicColor = () => {
           onChange={(e: any) => setLightness(e.target.value || '0')}
         />
       </Box>
-      <Box display="grid" gridTemplateColumns="repeat(3, 1fr)" gridGap={8}>
+      <Box display="grid" gridTemplateColumns="repeat(auto-fill, 200px)" gridGap={16}>
         <Button type="button" baseColor={color}>
-          Dynamic baseColor
+          Default
         </Button>
         <Button type="button" baseColor={color} isDisabled>
           Disabled

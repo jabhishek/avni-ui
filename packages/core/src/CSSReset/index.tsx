@@ -5,10 +5,19 @@ const styles = css`
   html {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
+    box-sizing: border-box;
   }
 
   body {
     margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
   }
 
   main {
@@ -38,7 +47,6 @@ const styles = css`
   abbr[title] {
     border-bottom: none;
     text-decoration: underline;
-    text-decoration: underline dotted;
   }
 
   b,
