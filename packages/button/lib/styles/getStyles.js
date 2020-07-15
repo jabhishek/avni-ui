@@ -12,6 +12,7 @@ exports.defaultStyle = {
 };
 const getSizeProps = ({ size, theme }) => {
     const { space, fontSizes } = theme;
+    console.log('size', size);
     if (size === 'small') {
         return {
             fontSize: fontSizes.xs,

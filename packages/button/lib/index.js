@@ -44,7 +44,7 @@ const StyledButton = styled_1.default('button', {
     },
 })((props) => {
     const { baseColor, theme, size, fullWidth, variant } = props, rest = __rest(props, ["baseColor", "theme", "size", "fullWidth", "variant"]);
-    console.log('variant', variant);
+    console.log('size', size);
     const styleProps = getStyles_1.getStyles({ baseColor, theme, size, variant });
     return Object.assign(Object.assign(Object.assign(Object.assign({}, getStyles_1.defaultStyle), styleProps), (fullWidth ? { width: '100%' } : {})), rest);
 });
