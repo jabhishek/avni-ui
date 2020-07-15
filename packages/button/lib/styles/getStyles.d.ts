@@ -1,6 +1,5 @@
 import { ITheme } from '@avni-ui/core';
-import { SizeVariants } from '../models';
-export declare const baseBoxShadow = "0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)";
+import { ButtonVariants, SizeVariants } from '../models';
 export declare const defaultStyle: {
     cursor: string;
     border: string;
@@ -9,28 +8,13 @@ export declare const defaultStyle: {
     transition: string;
     boxShadow: string;
 };
-export declare const getStyles: ({ baseColor, theme, size, }: {
+export declare const getStyles: ({ baseColor, theme, size, variant, }: {
     baseColor?: string | undefined;
     size?: "small" | "medium" | "large" | undefined;
     theme: ITheme;
+    variant: ButtonVariants;
 }) => {
     fontSize: string;
     padding: string;
     minWidth: number;
-    backgroundColor: string;
-    color: string;
-    ':hover:enabled': {
-        backgroundColor: string;
-        boxShadow: string;
-    };
-    ':focus:enabled, :active:enabled': {
-        outline: string;
-        outlineOffset: string;
-        boxShadow: string;
-    };
-    ':disabled': {
-        opacity: number;
-        boxShadow: string;
-        cursor: string;
-    };
 };

@@ -27,6 +27,12 @@ export const ButtonWithDynamicColor = () => {
         <Button type="button" baseColor={color} isDisabled>
           Disabled
         </Button>
+        <Button type="button" baseColor={color} variant="outline">
+          Outline
+        </Button>
+        <Button type="button" baseColor={color} variant="outline" isDisabled>
+          Outline disabled
+        </Button>
       </Box>
     </React.Fragment>
   );

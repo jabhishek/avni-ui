@@ -36,14 +36,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Button = void 0;
 const React = __importStar(require("react"));
 const styled_1 = __importDefault(require("@emotion/styled"));
+const shouldForwardProp_1 = require("@avni-ui/core/lib/Box/shouldForwardProp");
 const getStyles_1 = require("./styles/getStyles");
-const StyledButton = styled_1.default('button')((props) => {
-    const { baseColor, theme, rest, size, fullWidth } = props;
-    const styleProps = getStyles_1.getStyles({ baseColor, theme, size });
+const StyledButton = styled_1.default('button', {
+    shouldForwardProp(propName) {
+        return shouldForwardProp_1.shouldForwardProp(propName);
+    },
+})((props) => {
+    const { baseColor, theme, size, fullWidth, variant } = props, rest = __rest(props, ["baseColor", "theme", "size", "fullWidth", "variant"]);
+    console.log('variant', variant);
+    const styleProps = getStyles_1.getStyles({ baseColor, theme, size, variant });
     return Object.assign(Object.assign(Object.assign(Object.assign({}, getStyles_1.defaultStyle), styleProps), (fullWidth ? { width: '100%' } : {})), rest);
 });
 exports.Button = (_a) => {
-    var { children, type = 'button', isDisabled, onClick, size = 'medium' } = _a, props = __rest(_a, ["children", "type", "isDisabled", "onClick", "size"]);
-    return (React.createElement(StyledButton, Object.assign({ disabled: isDisabled, "aria-disabled": isDisabled, type: type, onClick: onClick, size: size }, props, { rest: props }), children));
+    var { children, type = 'button', isDisabled, size = 'medium', variant = 'filled' } = _a, rest = __rest(_a, ["children", "type", "isDisabled", "size", "variant"]);
+    return (React.createElement(StyledButton, Object.assign({ disabled: isDisabled, "aria-disabled": isDisabled, type: type, size: size, variant: variant }, rest), children));
 };
 exports.Button.displayName = 'Button';
