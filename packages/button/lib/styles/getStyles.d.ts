@@ -11,10 +11,10 @@ export declare const defaultStyle: {
 export declare const getStyles: ({ baseColor, theme, size, variant, }: {
     baseColor?: string | undefined;
     size?: "small" | "medium" | "large" | undefined;
-    theme: any;
+    theme: ITheme;
     variant: ButtonVariants;
 }) => {
-    fontSize: any;
+    fontSize: string;
     padding: string;
     minWidth: number;
 };

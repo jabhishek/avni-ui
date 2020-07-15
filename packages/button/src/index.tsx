@@ -12,6 +12,7 @@ const StyledButton = styled('button', {
   },
 })((props: any) => {
   const { baseColor, theme, size, fullWidth, variant, ...rest } = props;
+  console.log('props', props);
   console.log('size', size);
 
   const styleProps = getStyles({ baseColor, theme, size, variant });
