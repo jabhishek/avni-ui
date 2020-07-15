@@ -37,13 +37,13 @@ exports.Button = void 0;
 const React = __importStar(require("react"));
 const styled_1 = __importDefault(require("@emotion/styled"));
 const getStyles_1 = require("./styles/getStyles");
-const StyledButton = styled_1.default.button((props) => {
-    const { baseColor, theme } = props;
-    const styleProps = getStyles_1.getStyles({ baseColor, theme });
-    return Object.assign(Object.assign({}, getStyles_1.defaultStyle), styleProps);
+const StyledButton = styled_1.default('button')((props) => {
+    const { baseColor, theme, rest, size, fullWidth } = props;
+    const styleProps = getStyles_1.getStyles({ baseColor, theme, size });
+    return Object.assign(Object.assign(Object.assign(Object.assign({}, getStyles_1.defaultStyle), styleProps), (fullWidth ? { width: '100%' } : {})), rest);
 });
 exports.Button = (_a) => {
-    var { children, type = 'button', isDisabled } = _a, props = __rest(_a, ["children", "type", "isDisabled"]);
-    return (React.createElement(StyledButton, Object.assign({ disabled: isDisabled, "aria-disabled": isDisabled, type: type }, props), children));
+    var { children, type = 'button', isDisabled, onClick, size = 'medium' } = _a, props = __rest(_a, ["children", "type", "isDisabled", "onClick", "size"]);
+    return (React.createElement(StyledButton, Object.assign({ disabled: isDisabled, "aria-disabled": isDisabled, type: type, onClick: onClick, size: size }, props, { rest: props }), children));
 };
 exports.Button.displayName = 'Button';

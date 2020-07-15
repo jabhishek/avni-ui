@@ -1,5 +1,5 @@
 import { ITheme } from '@avni-ui/core';
-import { ButtonVariants } from '../models';
+import { SizeVariants } from '../models';
 export declare const baseBoxShadow = "0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)";
 export declare const defaultStyle: {
     cursor: string;
@@ -9,9 +9,9 @@ export declare const defaultStyle: {
     transition: string;
     boxShadow: string;
 };
-export declare const getStyles: ({ baseColor, theme, }: {
+export declare const getStyles: ({ baseColor, theme, size, }: {
     baseColor?: string | undefined;
-    variant?: "filled" | "outline" | "unstyled" | "transparent" | undefined;
+    size?: "small" | "medium" | "large" | undefined;
     theme: ITheme;
 }) => {
     fontSize: string;

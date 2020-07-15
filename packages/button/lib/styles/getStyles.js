@@ -48,11 +48,26 @@ exports.defaultStyle = {
     transition: '0.25s background-color, 0.25s color',
     boxShadow: exports.baseBoxShadow,
 };
-const getSizeProps = ({ theme }) => {
+const getSizeProps = ({ size, theme }) => {
+    const { space, fontSizes } = theme;
+    if (size === 'small') {
+        return {
+            fontSize: fontSizes.xs,
+            padding: `${space.sm} ${space.md}`,
+            minWidth: 80,
+        };
+    }
+    if (size === 'medium') {
+        return {
+            fontSize: fontSizes.md,
+            padding: `${space.sm} ${space.md}`,
+            minWidth: 100,
+        };
+    }
     return {
-        fontSize: theme.fontSizes.md,
-        padding: `${theme.space.md} ${theme.space.lg}`,
-        minWidth: 100,
+        fontSize: fontSizes.md,
+        padding: `${space.md} ${space.xl}`,
+        minWidth: 120,
     };
 };
 const getColorFromUserTheme = (baseColor, theme) => {
@@ -69,8 +84,8 @@ const getBaseColorToUse = (baseColor, theme) => {
     }
     return core_1.defaultTheme.colors.primary;
 };
-exports.getStyles = ({ baseColor, theme, }) => {
+exports.getStyles = ({ baseColor, theme, size, }) => {
     const colorProps = getColorProps({ baseColor: getBaseColorToUse(baseColor, theme), theme });
-    const sizeProps = getSizeProps({ theme });
+    const sizeProps = getSizeProps({ size, theme });
     return Object.assign(Object.assign({}, colorProps), sizeProps);
 };

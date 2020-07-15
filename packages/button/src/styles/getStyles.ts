@@ -1,7 +1,7 @@
 import { defaultTheme, ITheme, ThemeColor, Swatch } from '@avni-ui/core';
 import get from 'lodash.get';
 import { getContrastingTextColor, createSwatch } from '@avni-ui/color';
-import { ButtonVariants } from '../models';
+import { SizeVariants } from '../models';
 
 export const baseBoxShadow =
   '0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)';
@@ -54,11 +54,26 @@ export const defaultStyle = {
   boxShadow: baseBoxShadow,
 };
 
-const getSizeProps = ({ theme }: { theme: ITheme }) => {
+const getSizeProps = ({ size, theme }: { size?: SizeVariants; theme: ITheme }) => {
+  const { space, fontSizes } = theme;
+  if (size === 'small') {
+    return {
+      fontSize: fontSizes.xs,
+      padding: `${space.sm} ${space.md}`,
+      minWidth: 80,
+    };
+  }
+  if (size === 'medium') {
+    return {
+      fontSize: fontSizes.md,
+      padding: `${space.sm} ${space.md}`,
+      minWidth: 100,
+    };
+  }
   return {
-    fontSize: theme.fontSizes.md,
-    padding: `${theme.space.md} ${theme.space.lg}`,
-    minWidth: 100,
+    fontSize: fontSizes.md,
+    padding: `${space.md} ${space.xl}`,
+    minWidth: 120,
   };
 };
 
@@ -85,12 +100,13 @@ const getBaseColorToUse = (baseColor: string | undefined, theme: ITheme): ThemeC
 export const getStyles = ({
   baseColor,
   theme,
+  size,
 }: {
   baseColor?: string;
-  variant?: ButtonVariants;
+  size?: SizeVariants;
   theme: ITheme;
 }) => {
   const colorProps = getColorProps({ baseColor: getBaseColorToUse(baseColor, theme), theme });
-  const sizeProps = getSizeProps({ theme });
+  const sizeProps = getSizeProps({ size, theme });
   return { ...colorProps, ...sizeProps };
 };

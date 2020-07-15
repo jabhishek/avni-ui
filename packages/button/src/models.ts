@@ -1,9 +1,9 @@
 import * as React from 'react';
 
 export type ButtonVariants = 'filled' | 'outline' | 'unstyled' | 'transparent';
-export type SizeVariants = 'xs' | 'sm' | 'md' | 'lg' | 'fullWidth';
+export type SizeVariants = 'small' | 'medium' | 'large';
 
-export interface IButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+export interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
    * Button content
    */
@@ -17,5 +17,7 @@ export interface IButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   /** Button type */
   type: 'submit' | 'reset' | 'button' | undefined;
   /** Button size */
-  size?: SizeVariants | undefined;
+  size?: SizeVariants;
+  /** Is Button fullwidth */
+  fullWidth?: boolean;
 }

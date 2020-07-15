@@ -1,5 +1,6 @@
 import { addDecorator, addParameters } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
+import { withA11Y } from '@storybook/addon-a11y';
 import { withContexts } from '@storybook/addon-contexts/react';
 import {contexts} from "./contexts";
 import React from "react";
@@ -7,6 +8,7 @@ import {ThemeProvider, defaultTheme, CSSReset} from "@avni-ui/core";
 import {css, Global} from "@emotion/core";
 
 addDecorator(withInfo);
+addDecorator(withA11Y);
 addDecorator(withContexts(contexts));
 
 addParameters({
