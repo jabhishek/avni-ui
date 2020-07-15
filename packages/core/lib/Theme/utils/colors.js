@@ -11,3 +11,4 @@ exports.colors = {
     black,
     textBlack,
 };
+//# sourceMappingURL=colors.js.map

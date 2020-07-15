@@ -4,9 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "@avni-ui/core": "latest",
-    "@avni-ui/button": "latest",
-    "@avni-ui/color": "latest",
+    "@avni-ui/core": "^0.1.5",
+    "@avni-ui/button": "^0.1.10",
+    "@avni-ui/color": "^0.0.3",
     "@babel/core": "^7.10.2",
     "@emotion/core": "^10.0.28",
     "@mdx-js/loader": "^1.6.6",

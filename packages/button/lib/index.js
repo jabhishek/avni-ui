@@ -36,11 +36,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Button = void 0;
 const React = __importStar(require("react"));
 const styled_1 = __importDefault(require("@emotion/styled"));
-const shouldForwardProp_1 = require("@avni-ui/core/lib/Box/shouldForwardProp");
+const is_prop_valid_1 = __importDefault(require("@emotion/is-prop-valid"));
 const getStyles_1 = require("./styles/getStyles");
 const StyledButton = styled_1.default('button', {
     shouldForwardProp(propName) {
-        return shouldForwardProp_1.shouldForwardProp(propName);
+        return is_prop_valid_1.default(propName);
     },
 })((props) => {
     const { baseColor, theme, size, fullWidth, variant } = props, rest = __rest(props, ["baseColor", "theme", "size", "fullWidth", "variant"]);

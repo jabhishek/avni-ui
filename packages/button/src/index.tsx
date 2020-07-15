@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
-import { shouldForwardProp } from '@avni-ui/core/lib/Box/shouldForwardProp';
+import isPropValid from '@emotion/is-prop-valid';
 import { getStyles, defaultStyle } from './styles/getStyles';
 import { IButtonProps } from './models';
 
@@ -8,7 +8,7 @@ export { IButtonProps };
 
 const StyledButton = styled('button', {
   shouldForwardProp(propName: string): boolean {
-    return shouldForwardProp(propName);
+    return isPropValid(propName);
   },
 })((props: any) => {
   const { baseColor, theme, size, fullWidth, variant, ...rest } = props;
