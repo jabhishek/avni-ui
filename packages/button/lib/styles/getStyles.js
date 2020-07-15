@@ -42,3 +42,4 @@ exports.getStyles = ({ baseColor, theme, size, variant, }) => {
     const sizeProps = getSizeProps({ size, theme });
     return Object.assign(Object.assign({}, colorProps), sizeProps);
 };
+//# sourceMappingURL=getStyles.js.map

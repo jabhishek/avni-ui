@@ -54,3 +54,4 @@ exports.Button = (_a) => {
     return (React.createElement(StyledButton, Object.assign({ disabled: isDisabled, "aria-disabled": isDisabled, type: type, size: size, variant: variant }, rest), children));
 };
 exports.Button.displayName = 'Button';
+//# sourceMappingURL=index.js.map
