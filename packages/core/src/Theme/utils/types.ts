@@ -1,4 +1,5 @@
 export type Typography = {
+  baseFontSize?: number;
   fonts: {
     body: string;
     heading: string;

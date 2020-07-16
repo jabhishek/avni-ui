@@ -22,13 +22,7 @@ addDecorator(storyFn => <ThemeProvider theme={defaultTheme}>
     <CSSReset />
     <Global
         styles={css`
-            html {
-              font-size: 62.5%;
-            }
             body {
-              font-size: 1.6rem;
-              font-family: ${defaultTheme.fonts.body};
-              color: ${defaultTheme.colors.textBlack};
               padding: 20px;
             }
           `}

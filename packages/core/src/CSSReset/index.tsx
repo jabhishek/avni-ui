@@ -1,195 +1,212 @@
 import * as React from 'react';
 import { Global, css } from '@emotion/core';
+import { ITheme } from '..';
 
-const styles = css`
-  html {
-    line-height: 1.15;
-    -webkit-text-size-adjust: 100%;
-    box-sizing: border-box;
+const getHtmlFontSize = (baseFontSize: number | undefined): string => {
+  if (!baseFontSize) {
+    return '62.5%'; // font-size of 10px
   }
+  return `${((baseFontSize * 100) / 16).toFixed(2)}%`;
+};
 
-  body {
-    margin: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+const styles = (theme: ITheme) => {
+  console.log('Global props', theme);
+  const baseFontSize: string = getHtmlFontSize(theme.baseFontSize);
+  return css`
+    html {
+      line-height: 1.15;
+      -webkit-text-size-adjust: 100%;
+      box-sizing: border-box;
+      font-family: ${theme.fonts.body};
+      font-size: ${baseFontSize};
+    }
 
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
+    body {
+      margin: 0;
+      font-size: 1.6rem;
+      font-family: ${theme.fonts.body};
+      color: ${theme.colors.textBlack};
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
-  main {
-    display: block;
-  }
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+    }
 
-  h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
-  }
+    main {
+      display: block;
+    }
 
-  hr {
-    box-sizing: content-box;
-    height: 0;
-    overflow: visible;
-  }
+    h1 {
+      font-size: 2em;
+      margin: 0.67em 0;
+    }
 
-  pre {
-    font-family: monospace, monospace;
-    font-size: 1em;
-  }
+    hr {
+      box-sizing: content-box;
+      height: 0;
+      overflow: visible;
+    }
 
-  a {
-    background-color: transparent;
-  }
+    pre {
+      font-family: monospace, monospace;
+      font-size: 1em;
+    }
 
-  abbr[title] {
-    border-bottom: none;
-    text-decoration: underline;
-  }
+    a {
+      background-color: transparent;
+    }
 
-  b,
-  strong {
-    font-weight: bolder;
-  }
+    abbr[title] {
+      border-bottom: none;
+      text-decoration: underline;
+    }
 
-  code,
-  kbd,
-  samp {
-    font-family: monospace, monospace;
-    font-size: 1em;
-  }
+    b,
+    strong {
+      font-weight: bolder;
+    }
 
-  small {
-    font-size: 80%;
-  }
+    code,
+    kbd,
+    samp {
+      font-family: monospace, monospace;
+      font-size: 1em;
+    }
 
-  sub,
-  sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
-  }
+    small {
+      font-size: 80%;
+    }
 
-  sub {
-    bottom: -0.25em;
-  }
+    sub,
+    sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
 
-  sup {
-    top: -0.5em;
-  }
+    sub {
+      bottom: -0.25em;
+    }
 
-  img {
-    border-style: none;
-  }
+    sup {
+      top: -0.5em;
+    }
 
-  button,
-  input,
-  optgroup,
-  select,
-  textarea {
-    font-family: inherit;
-    font-size: 100%;
-    line-height: 1.15;
-    margin: 0;
-  }
+    img {
+      border-style: none;
+    }
 
-  button,
-  input {
-    overflow: visible;
-  }
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: inherit;
+      font-size: 100%;
+      line-height: 1.15;
+      margin: 0;
+    }
 
-  button,
-  select {
-    text-transform: none;
-  }
+    button,
+    input {
+      overflow: visible;
+    }
 
-  [type='button'],
-  [type='reset'],
-  [type='submit'],
-  button {
-    -webkit-appearance: button;
-  }
+    button,
+    select {
+      text-transform: none;
+    }
 
-  [type='button']::-moz-focus-inner,
-  [type='reset']::-moz-focus-inner,
-  [type='submit']::-moz-focus-inner,
-  button::-moz-focus-inner {
-    border-style: none;
-    padding: 0;
-  }
+    [type='button'],
+    [type='reset'],
+    [type='submit'],
+    button {
+      -webkit-appearance: button;
+    }
 
-  [type='button']:-moz-focusring,
-  [type='reset']:-moz-focusring,
-  [type='submit']:-moz-focusring,
-  button:-moz-focusring {
-    outline: 1px dotted ButtonText;
-  }
+    [type='button']::-moz-focus-inner,
+    [type='reset']::-moz-focus-inner,
+    [type='submit']::-moz-focus-inner,
+    button::-moz-focus-inner {
+      border-style: none;
+      padding: 0;
+    }
 
-  fieldset {
-    padding: 0.35em 0.75em 0.625em;
-  }
+    [type='button']:-moz-focusring,
+    [type='reset']:-moz-focusring,
+    [type='submit']:-moz-focusring,
+    button:-moz-focusring {
+      outline: 1px dotted ButtonText;
+    }
 
-  legend {
-    box-sizing: border-box;
-    color: inherit;
-    display: table;
-    max-width: 100%;
-    padding: 0;
-    white-space: normal;
-  }
+    fieldset {
+      padding: 0.35em 0.75em 0.625em;
+    }
 
-  progress {
-    vertical-align: baseline;
-  }
+    legend {
+      box-sizing: border-box;
+      color: inherit;
+      display: table;
+      max-width: 100%;
+      padding: 0;
+      white-space: normal;
+    }
 
-  textarea {
-    overflow: auto;
-  }
+    progress {
+      vertical-align: baseline;
+    }
 
-  [type='checkbox'],
-  [type='radio'] {
-    box-sizing: border-box;
-    padding: 0;
-  }
+    textarea {
+      overflow: auto;
+    }
 
-  [type='number']::-webkit-inner-spin-button,
-  [type='number']::-webkit-outer-spin-button {
-    height: auto;
-  }
+    [type='checkbox'],
+    [type='radio'] {
+      box-sizing: border-box;
+      padding: 0;
+    }
 
-  [type='search'] {
-    -webkit-appearance: textfield;
-    outline-offset: -2px;
-  }
+    [type='number']::-webkit-inner-spin-button,
+    [type='number']::-webkit-outer-spin-button {
+      height: auto;
+    }
 
-  [type='search']::-webkit-search-decoration {
-    -webkit-appearance: none;
-  }
+    [type='search'] {
+      -webkit-appearance: textfield;
+      outline-offset: -2px;
+    }
 
-  ::-webkit-file-upload-button {
-    -webkit-appearance: button;
-    font: inherit;
-  }
+    [type='search']::-webkit-search-decoration {
+      -webkit-appearance: none;
+    }
 
-  details {
-    display: block;
-  }
+    ::-webkit-file-upload-button {
+      -webkit-appearance: button;
+      font: inherit;
+    }
 
-  summary {
-    display: list-item;
-  }
+    details {
+      display: block;
+    }
 
-  template {
-    display: none;
-  }
+    summary {
+      display: list-item;
+    }
 
-  [hidden] {
-    display: none;
-  }
-`;
+    template {
+      display: none;
+    }
+
+    [hidden] {
+      display: none;
+    }
+  `;
+};
 
 export const CSSReset = () => {
   return <Global styles={styles} />;

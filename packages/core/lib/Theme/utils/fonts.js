@@ -26,6 +26,7 @@ const fontSizes = {
     '6xl': exports.pxToRem(64),
 };
 exports.typography = {
+    baseFontSize: exports.DEFAULT_BASE_FONT_SIZE,
     fonts,
     fontSizes,
 };

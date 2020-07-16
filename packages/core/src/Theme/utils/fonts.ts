@@ -29,6 +29,7 @@ const fontSizes = {
 };
 
 export const typography: Typography = {
+  baseFontSize: DEFAULT_BASE_FONT_SIZE,
   fonts,
   fontSizes,
 };
