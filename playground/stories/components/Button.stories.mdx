@@ -56,9 +56,9 @@ Buttons in different sizes
 <Preview withSource="none">
   <Story name="Different Sizes">
     <div>
-        <Button onClick={action('button-click')} size="small" marginRight={8}>Small</Button>
-        <Button onClick={action('button-click')} size="medium" marginRight={8}>Medium</Button>
-        <Button onClick={action('button-click')} size="large" marginRight={8}>Large</Button>
+        <Button onClick={action('button-click')} size="small" style={{marginRight:8}}>Small</Button>
+        <Button onClick={action('button-click')} size="medium" style={{marginRight:8}}>Medium</Button>
+        <Button onClick={action('button-click')} size="large">Large</Button>
     </div>
   </Story>
 </Preview>
@@ -80,7 +80,7 @@ Outline button is a great choice for a secondary button
 <Preview withSource="none">
   <Story name="Outline">
     <div>
-        <Button onClick={action('button-click')} variant="outline" marginRight={8}>Outline</Button>
+        <Button onClick={action('button-click')} variant="outline" style={{marginRight:8}}>Outline</Button>
         <Button onClick={action('button-click')} variant="outline" isDisabled>Outline Disabled</Button>
     </div>
   </Story>

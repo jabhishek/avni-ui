@@ -1,1 +1,0 @@
-{"version":3,"file":"customProps.js","sourceRoot":"","sources":["../../src/Box/customProps.ts"],"names":[],"mappings":";;;AAAA,iDAAuC;AAE1B,QAAA,YAAY,GAAG,CAAC,QAAQ,CAAC,CAAC;AAE1B,QAAA,MAAM,GAAiC;IAClD,MAAM,EAAE,IAAI;IACZ,OAAO,EAAE,IAAI;IACb,UAAU,EAAE,IAAI;CACjB,CAAC;AAEW,QAAA,WAAW,GAAG,sBAAM,CAAC,cAAM,CAAC,CAAC"}

@@ -13,4 +13,3 @@ exports.defaultTheme = Object.assign(Object.assign({}, fonts_1.typography), { co
         '2xl': fonts_1.pxToRem(32),
         '3xl': fonts_1.pxToRem(48),
     } });
-//# sourceMappingURL=index.js.map

@@ -35,4 +35,3 @@ exports.createSwatch = (baseColor) => {
     }
     return mainSwatch;
 };
-//# sourceMappingURL=createSwatch.js.map

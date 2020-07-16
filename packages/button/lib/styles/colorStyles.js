@@ -87,4 +87,3 @@ exports.getBaseColorToUse = (baseColor, theme) => {
     }
     return core_1.defaultTheme.colors.primary;
 };
-//# sourceMappingURL=colorStyles.js.map

@@ -8,4 +8,3 @@ exports.getContrastingTextColor = (color, darkColor = '#000', lightColor = '#fff
     const contrastWithLight = polished_1.getContrast(color, lightColor);
     return contrastWithDark > contrastWithLight ? darkColor : lightColor;
 };
-//# sourceMappingURL=getContrastingTextColor.js.map

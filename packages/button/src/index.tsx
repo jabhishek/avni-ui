@@ -11,16 +11,13 @@ const StyledButton = styled('button', {
     return isPropValid(propName);
   },
 })((props: any) => {
-  const { baseColor, theme, size, fullWidth, variant, ...rest } = props;
-  console.log('props', props);
-  console.log('size', size);
-
+  const { baseColor, theme, size, fullWidth, variant } = props;
   const styleProps = getStyles({ baseColor, theme, size, variant });
+
   return {
     ...defaultStyle,
     ...styleProps,
     ...(fullWidth ? { width: '100%' } : {}),
-    ...rest,
   };
 });
 
@@ -39,6 +36,7 @@ export const Button: React.FunctionComponent<IButtonProps> = ({
       type={type}
       size={size}
       variant={variant}
+      hello="world"
       {...rest}
     >
       {children}

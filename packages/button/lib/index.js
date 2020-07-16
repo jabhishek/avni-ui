@@ -43,15 +43,12 @@ const StyledButton = styled_1.default('button', {
         return is_prop_valid_1.default(propName);
     },
 })((props) => {
-    const { baseColor, theme, size, fullWidth, variant } = props, rest = __rest(props, ["baseColor", "theme", "size", "fullWidth", "variant"]);
-    console.log('props', props);
-    console.log('size', size);
+    const { baseColor, theme, size, fullWidth, variant } = props;
     const styleProps = getStyles_1.getStyles({ baseColor, theme, size, variant });
-    return Object.assign(Object.assign(Object.assign(Object.assign({}, getStyles_1.defaultStyle), styleProps), (fullWidth ? { width: '100%' } : {})), rest);
+    return Object.assign(Object.assign(Object.assign({}, getStyles_1.defaultStyle), styleProps), (fullWidth ? { width: '100%' } : {}));
 });
 exports.Button = (_a) => {
     var { children, type = 'button', isDisabled, size = 'medium', variant = 'filled' } = _a, rest = __rest(_a, ["children", "type", "isDisabled", "size", "variant"]);
-    return (React.createElement(StyledButton, Object.assign({ disabled: isDisabled, "aria-disabled": isDisabled, type: type, size: size, variant: variant }, rest), children));
+    return (React.createElement(StyledButton, Object.assign({ disabled: isDisabled, "aria-disabled": isDisabled, type: type, size: size, variant: variant, hello: "world" }, rest), children));
 };
 exports.Button.displayName = 'Button';
-//# sourceMappingURL=index.js.map

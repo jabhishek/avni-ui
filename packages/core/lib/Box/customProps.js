@@ -9,4 +9,3 @@ exports.config = {
     transition: true,
 };
 exports.customProps = styled_system_1.system(exports.config);
-//# sourceMappingURL=customProps.js.map
