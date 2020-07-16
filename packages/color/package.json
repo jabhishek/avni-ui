@@ -1,6 +1,6 @@
 {
   "name": "@avni-ui/color",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "color utilities",
   "author": "Abhishek Jain <abhi2000@gmail.com>",
   "homepage": "https://github.com/jabhishek/avni-ui#readme",
@@ -29,7 +29,7 @@
     "url": "https://github.com/jabhishek/avni-ui/issues"
   },
   "dependencies": {
-    "@avni-ui/core": "^0.1.6",
+    "@avni-ui/core": "^0.1.7",
     "polished": "3.6.5"
   }
 }
