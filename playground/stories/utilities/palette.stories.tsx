@@ -1,8 +1,5 @@
 import React from 'react';
-import { defaultTheme } from '@avni-ui/core/lib/Theme';
-import { ThemeProvider } from '@avni-ui/core/lib/ThemeProvider';
 import { Box } from '@avni-ui/core';
-import { CSSReset } from '@avni-ui/core/lib/CSSReset';
 import { createSwatch } from '@avni-ui/color';
 import { ColorPicker } from '../helpers/ColorPicker';
 
@@ -45,29 +42,26 @@ export const SwatchStory = () => {
   console.log('swatch', swatch);
 
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <React.Fragment>
-        <CSSReset />
-        <ColorPicker onChange={setColor} />
-        <div>
-          <h2>Selected Color</h2>
-          <Box bg={color} height={40} width={150} />
-        </div>
-        <div>
-          <h2>Swatch</h2>
-          {Object.values(swatch).map(({ color, contrastToWhite, contrastToBlack }, index) => {
-            return (
-              <ColorBox
-                key={index}
-                contrastToWhite={contrastToWhite}
-                color={color}
-                contrastToBlack={contrastToBlack}
-              />
-            );
-          })}
-        </div>
-      </React.Fragment>
-    </ThemeProvider>
+    <React.Fragment>
+      <ColorPicker onChange={setColor} />
+      <div>
+        <h2>Selected Color</h2>
+        <Box bg={color} height={40} width={150} />
+      </div>
+      <div>
+        <h2>Swatch</h2>
+        {Object.values(swatch).map(({ color, contrastToWhite, contrastToBlack }, index) => {
+          return (
+            <ColorBox
+              key={index}
+              contrastToWhite={contrastToWhite}
+              color={color}
+              contrastToBlack={contrastToBlack}
+            />
+          );
+        })}
+      </div>
+    </React.Fragment>
   );
 };
 SwatchStory.story = {
