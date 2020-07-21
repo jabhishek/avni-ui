@@ -21,5 +21,6 @@ export type Colors = {
   primary: ThemeColor;
   white: string;
   black: string;
-  textBlack: string;
+  textColor: string;
+  backgroundColor: string;
 } & Record<string, ThemeColor>;

@@ -1,6 +1,6 @@
 import { Colors, Typography } from './utils/types';
 
-export interface ITheme extends Typography {
+export type ITheme = Typography & {
   colors: Colors;
   space: Record<string, number | string>;
-}
+};

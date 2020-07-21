@@ -11,12 +11,15 @@ addDecorator(withInfo);
 addDecorator(withA11Y);
 addDecorator(withContexts(contexts));
 
+/*
 addParameters({
     backgrounds: [
         { name: 'Default Theme', value: 'aliceblue', default: true },
         { name: 'Dark Theme', value: '#121212' },
     ]
 })
+*/
+/*
 
 addDecorator(storyFn => <ThemeProvider theme={defaultTheme}>
     <CSSReset />
@@ -29,3 +32,4 @@ addDecorator(storyFn => <ThemeProvider theme={defaultTheme}>
     />
     {storyFn()}
 </ThemeProvider>);
+*/

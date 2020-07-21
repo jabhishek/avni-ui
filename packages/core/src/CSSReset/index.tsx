@@ -10,7 +10,6 @@ const getHtmlFontSize = (baseFontSize: number | undefined): string => {
 };
 
 const styles = (theme: ITheme) => {
-  console.log('Global props', theme);
   const baseFontSize: string = getHtmlFontSize(theme.baseFontSize);
   return css`
     html {
@@ -25,7 +24,8 @@ const styles = (theme: ITheme) => {
       margin: 0;
       font-size: 1.6rem;
       font-family: ${theme.fonts.body};
-      color: ${theme.colors.textBlack};
+      color: ${theme.colors.textColor};
+      background-color: ${theme.colors.backgroundColor};
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }

@@ -18,14 +18,13 @@ const fonts = {
 const fontSizes = {
   xs: pxToRem(12),
   sm: pxToRem(14),
-  md: pxToRem(16),
-  lg: pxToRem(18),
-  xl: pxToRem(20),
-  '2xl': pxToRem(24),
-  '3xl': pxToRem(30),
-  '4xl': pxToRem(36),
-  '5xl': pxToRem(48),
-  '6xl': pxToRem(64),
+  body: pxToRem(16),
+  l1: pxToRem(18),
+  l2: pxToRem(20),
+  l3: pxToRem(24),
+  l4: pxToRem(30),
+  l5: pxToRem(36),
+  l6: pxToRem(48),
 };
 
 export const typography: Typography = {

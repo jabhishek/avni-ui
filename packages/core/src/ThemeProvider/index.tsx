@@ -10,7 +10,7 @@ export const ThemeProvider = ({
   children,
 }: {
   theme?: ITheme;
-  children: React.ReactChildren | React.ReactChild;
+  children: React.ReactNode;
 }) => {
   return <EmotionThemeProvider theme={theme}>{children}</EmotionThemeProvider>;
 };

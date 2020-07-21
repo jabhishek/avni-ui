@@ -3,7 +3,7 @@ import { ITheme } from '..';
 export declare const ThemeProvider: {
     ({ theme, children, }: {
         theme?: ITheme | undefined;
-        children: React.ReactChildren | React.ReactChild;
+        children: React.ReactNode;
     }): JSX.Element;
     displayName: string;
 };

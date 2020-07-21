@@ -7,6 +7,7 @@ exports.getBaseColorToUse = exports.getColorFromUserTheme = exports.getColorProp
 const core_1 = require("@avni-ui/core");
 const color_1 = require("@avni-ui/color");
 const lodash_get_1 = __importDefault(require("lodash.get"));
+const color_2 = require("@avni-ui/color");
 const disabledStateStyles = {
     opacity: 0.2,
     boxShadow: 'none',
@@ -33,7 +34,7 @@ const getFilledButtonStyles = (swatch, theme) => {
     const outlineColor = swatch['600'].color;
     return {
         backgroundColor: color,
-        color: color_1.getContrastingTextColor(color, theme.colors.textBlack),
+        color: color_1.getContrastingTextColor(color, theme.colors.textColor),
         ':hover:enabled': {
             backgroundColor: hoverBgColor,
             boxShadow: hoverBoxShadow,
@@ -43,17 +44,21 @@ const getFilledButtonStyles = (swatch, theme) => {
     };
 };
 const getOutlineButtonStyles = (swatch, theme) => {
-    const color = swatch['500'].color;
-    const textColor = swatch['700'].color;
-    const hoverBgColor = swatch['50'].color;
+    const bodyBackgroundColor = theme.colors.backgroundColor;
+    console.log('bodyBackgroundColor', bodyBackgroundColor);
+    const bgColor = swatch['500'].color;
+    const textColor = color_1.getContrastingTextColor(bodyBackgroundColor, swatch['700'].color, swatch['200'].color);
+    const hoverBgColor = color_2.getHoverColor(bodyBackgroundColor);
+    const hoverTextColor = color_1.getContrastingTextColor(hoverBgColor, swatch['700'].color, swatch['200'].color);
     const outlineColor = swatch['600'].color;
     return {
-        border: `2px solid ${color}`,
+        border: `2px solid ${bgColor}`,
         backgroundColor: 'transparent',
         boxShadow: `none`,
         color: textColor,
-        ':hover:enabled': {
+        ':hover:enabled, :focus:enabled, :active:enabled': {
             backgroundColor: hoverBgColor,
+            color: hoverTextColor,
         },
         ':focus:enabled, :active:enabled': {
             outline: `1px solid ${outlineColor}`,
