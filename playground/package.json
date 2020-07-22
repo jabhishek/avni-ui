@@ -4,20 +4,21 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "@avni-ui/core": "^0.1.5",
     "@avni-ui/button": "^0.1.10",
     "@avni-ui/color": "^0.0.3",
-    "@avni-ui/heading": "^0.0.1",
+    "@avni-ui/core": "^0.1.5",
+    "@avni-ui/heading": "^0.0.2",
+    "@avni-ui/switch": "latest",
     "@babel/core": "^7.10.2",
     "@emotion/core": "^10.0.28",
     "@mdx-js/loader": "^1.6.6",
+    "@storybook/addon-a11y": "^5.3.19",
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-backgrounds": "5.3.19",
     "@storybook/addon-contexts": "5.3.19",
     "@storybook/addon-docs": "^5.3.19",
     "@storybook/addon-info": "5.3.19",
     "@storybook/addon-links": "^5.3.19",
-    "@storybook/addon-a11y": "^5.3.19",
     "@storybook/addons": "^5.3.19",
     "@storybook/react": "^5.3.19",
     "@storybook/theming": "^5.3.19",
@@ -26,15 +27,16 @@
     "react": "^16.13.1",
     "react-docgen-typescript-loader": "3.7.2",
     "react-dom": "^16.13.1",
-    "typescript": "^3.9.3",
     "styled-system": "^5.1.5",
-    "ts-loader": "^7.0.5"
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.9.3"
   },
   "scripts": {
     "storybook": "start-storybook",
     "build-storybook": "build-storybook -s public"
   },
   "devDependencies": {
+    "emotion-ts-plugin": "^0.7.0",
     "path": "^0.12.7"
   }
 }

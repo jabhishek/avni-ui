@@ -2,33 +2,50 @@
 # yarn lockfile v1
 
 
-"@avni-ui/button@latest":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@avni-ui/button/-/button-0.1.6.tgz#770b3c00e2805bee7d16d2bff131fe850fddead3"
-  integrity sha512-jF5Mo0rGNSUa6byiCy07NSpmqPLRy5WbJF3bXbJFS6/ZqeT+cjgpm9YbqJG38nBtF8FHMm9t/vjK4Y7EGW/Sxw==
+"@avni-ui/button@^0.1.10":
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/@avni-ui/button/-/button-0.1.13.tgz#411515e7e6d7771fa0955f22061e6754065a74fe"
+  integrity sha512-FTkpKMrW0DyPiKXNv7zJIMwMikUXyxglQ5+pz00YX5VNna9fh4dHynIcgLE9Oahb5I8HMn9bMfG+7ecYyRFNvA==
   dependencies:
-    "@avni-ui/color" "^0.0.2"
-    "@avni-ui/core" "^0.1.4"
+    "@avni-ui/color" "^0.0.6"
+    "@avni-ui/core" "^0.1.8"
+    "@emotion/is-prop-valid" "^0.8.8"
     lodash.get "^4.4.2"
+    lodash.omit "^4.5.0"
 
-"@avni-ui/color@^0.0.2", "@avni-ui/color@latest":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@avni-ui/color/-/color-0.0.2.tgz#d080c0975d456cfb2d748361b8998f45d37c26e6"
-  integrity sha512-1kvH9z58RIYZdN/N6VJdnq7N4lmysyn/tBh/I+br8B4skBLtGRDus+ZRnNLUqGZ1yVGPSqvvYnZP7thS8PEJew==
+"@avni-ui/color@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@avni-ui/color/-/color-0.0.3.tgz#f15b83b98d51cef306487b3b22f6463f4271b59f"
+  integrity sha512-wqIxhPJ2DuH34eQrhkXR88mU8Z5bwoMXaGHK8UQQAYm3oS0iqS9gchpZ/hkQH7qkGLw5VMON0Yhp+P8GMfm+Eg==
   dependencies:
-    "@avni-ui/core" "^0.1.4"
+    "@avni-ui/core" "^0.1.5"
     polished "3.6.5"
 
-"@avni-ui/core@^0.1.4", "@avni-ui/core@latest":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@avni-ui/core/-/core-0.1.4.tgz#8f7f832c5609b4777d39adb5572769d68e28792f"
-  integrity sha512-ugnaTjvtw6G5TAOAEVaWdN75h7dXXdCWiX3IcQdIbrjO4RY9Y5YMYqf+k7gzEzulHYcr1uISdpV6HWFaME5MeA==
+"@avni-ui/color@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@avni-ui/color/-/color-0.0.6.tgz#f089900a3ebbac857bc8a4780e899be1b7503827"
+  integrity sha512-aTw+aRIpdNlXH/IbI6xJD9IXZQbM1xxaZftLYIrIVF5j8s3LpmT6a1iKEidgRjLvT0UBBokjIxgbIZSQb3pHuA==
+  dependencies:
+    "@avni-ui/core" "^0.1.8"
+    polished "3.6.5"
+
+"@avni-ui/core@^0.1.5", "@avni-ui/core@^0.1.8":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@avni-ui/core/-/core-0.1.8.tgz#95a1c7335f58ea1e70adbcfc7c3984736fc0774a"
+  integrity sha512-h2vASfp1BbExYL1e5xddP8e+Hhme7DWM5nu4TE0t+Yik/AAD7XSKsFoUpTuPckYmdayQ1Fic2LdPgO119iysmg==
   dependencies:
     "@styled-system/css" "^5.1.5"
     "@styled-system/should-forward-prop" "^5.1.5"
     "@types/color" "^3.0.1"
     color "^3.1.2"
     csstype "^2.6.10"
+
+"@avni-ui/heading@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@avni-ui/heading/-/heading-0.0.2.tgz#7d5b5bcb2b47a6439326764a70640d1f5f50a405"
+  integrity sha512-nkBY0vCWb34OtoOC+j9sY4pO3FJvH9DSZZrpVBZwZbT7CJRafZ0fBm5OJcaaP43fBoz5QVqKkQaImhTQfQ8tnQ==
+  dependencies:
+    "@avni-ui/core" "^0.1.8"
 
 "@babel/code-frame@7.5.5":
   version "7.5.5"
@@ -2031,12 +2048,12 @@
     "@emotion/utils" "0.11.3"
     babel-plugin-emotion "^10.0.27"
 
-"@emotion/hash@0.8.0":
+"@emotion/hash@0.8.0", "@emotion/hash@^0.8.0":
   version "0.8.0"
   resolved "https://registry.yarnpkg.com/@emotion/hash/-/hash-0.8.0.tgz#bbbff68978fefdbe68ccb533bc8cbe1d1afb5413"
   integrity sha512-kBJtf7PH6aWwZ6fka3zQ0p6SBYzx4fl1LoZXE2RrnYST9Xljm7WfKJrU4g/Xr3Beg72MLrp1AWNUmuYJTL7Cow==
 
-"@emotion/is-prop-valid@0.8.8", "@emotion/is-prop-valid@^0.8.1":
+"@emotion/is-prop-valid@0.8.8", "@emotion/is-prop-valid@^0.8.1", "@emotion/is-prop-valid@^0.8.8":
   version "0.8.8"
   resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz#db28b1c4368a259b60a97311d6a952d4fd01ac1a"
   integrity sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==
@@ -5415,6 +5432,18 @@ emotion-theming@^10.0.19:
     "@emotion/weak-memoize" "0.2.5"
     hoist-non-react-statics "^3.3.0"
 
+emotion-ts-plugin@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/emotion-ts-plugin/-/emotion-ts-plugin-0.7.0.tgz#cb94c323cf365ccc266c943ca0d8a8051354f9dc"
+  integrity sha512-ZK5yknMaQU10YCHFN1KzpLpkcASQmA2OCgMUvZKNr+qsUuR4D5g8VBc11fLyc/4B1HAmLDx3FLn86CAKcGc3NQ==
+  dependencies:
+    "@emotion/hash" "^0.8.0"
+    convert-source-map "^1.7.0"
+    find-root "^1.1.0"
+    lodash "^4.17.15"
+    source-map "^0.7.3"
+    tslib "^1.10.0"
+
 encodeurl@~1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/encodeurl/-/encodeurl-1.0.2.tgz#ad3ff4c86ec2d029322f5a02c3a9a606c95b3f59"
@@ -7485,6 +7514,11 @@ lodash.memoize@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
   integrity sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=
+
+lodash.omit@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.omit/-/lodash.omit-4.5.0.tgz#6eb19ae5a1ee1dd9df0b969e66ce0b7fa30b5e60"
+  integrity sha1-brGa5aHuHdnfC5aeZs4Lf6MLXmA=
 
 lodash.throttle@^4.1.1:
   version "4.1.1"

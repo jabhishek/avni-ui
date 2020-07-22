@@ -1,5 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
 import * as React from 'react';
 
 // simulate dark mode in a story

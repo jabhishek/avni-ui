@@ -1,0 +1,15 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { action } from "@storybook/addon-actions";
+import { Toggle } from '../helpers/Toggle';
+
+<Meta title="Components/Switch" component={Toggle} />
+
+# Heading
+
+<Preview withSource="none">
+  <Story name="Default">
+    <div>
+        <Toggle onChange={action('clicked')}/>
+    </div>
+  </Story>
+</Preview>

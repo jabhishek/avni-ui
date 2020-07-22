@@ -1,0 +1,46 @@
+{
+  "name": "@avni-ui/switch",
+  "version": "0.0.1",
+  "description": "Accessible Switch component",
+  "keywords": [
+    "avni-ui",
+    "react",
+    "switch",
+    "emotion"
+  ],
+  "author": "Abhishek Jain <abhi2000@gmail.com>",
+  "homepage": "https://github.com/jabhishek/avni-ui#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jabhishek/avni-ui.git"
+  },
+  "scripts": {
+    "pretsc": "rm -rf lib",
+    "tsc": "tsc",
+    "lint": "eslint . --ext ts,tsx --fix"
+  },
+  "bugs": {
+    "url": "https://github.com/jabhishek/avni-ui/issues"
+  },
+  "peerDependencies": {
+    "@emotion/core": "10.0.28",
+    "@emotion/styled": "10.0.27",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  },
+  "dependencies": {
+    "@avni-ui/core": "^0.1.8"
+  }
+}
