@@ -9,11 +9,7 @@ const toHslString = (color) => {
     return polished_1.rgbToColorString(rgb);
 };
 const getSwatchColor = (swatchColor) => {
-    return {
-        color: toHslString(swatchColor),
-        contrastToWhite: polished_1.getContrast(swatchColor, '#fff'),
-        contrastToBlack: polished_1.getContrast(swatchColor, '#000'),
-    };
+    return toHslString(swatchColor);
 };
 exports.createSwatch = (baseColor) => {
     const mainSwatch = {};

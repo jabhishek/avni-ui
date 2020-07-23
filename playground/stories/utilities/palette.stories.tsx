@@ -7,28 +7,11 @@ export default {
   title: 'Swatch',
 };
 
-const ColorBox = ({
-  color,
-  contrastToWhite,
-  contrastToBlack,
-}: {
-  color: string;
-  contrastToWhite: number;
-  contrastToBlack: number;
-}) => {
+const ColorBox = ({ color }: { color: string }) => {
   return (
     <Box display="flex">
-      <Box
-        bg={color}
-        height={40}
-        width={150}
-        mr={8}
-        color={contrastToWhite > contrastToBlack ? 'white' : 'black'}
-        lineHeight="40px"
-        textAlign="center"
-      >
-        Color
-      </Box>
+      <Box bg={color} height={40} width={150} mr={8} lineHeight="40px" textAlign="center" />
+
       {color}
       {/* - {contrastToWhite.toFixed(2)} - {contrastToBlack.toFixed(2)}*/}
     </Box>
@@ -39,8 +22,6 @@ export const SwatchStory = () => {
   const [color, setColor] = React.useState<string>();
   const swatch = color ? createSwatch(color) : {};
 
-  console.log('swatch', swatch);
-
   return (
     <React.Fragment>
       <ColorPicker onChange={setColor} />
@@ -50,15 +31,8 @@ export const SwatchStory = () => {
       </div>
       <div>
         <h2>Swatch</h2>
-        {Object.values(swatch).map(({ color, contrastToWhite, contrastToBlack }, index) => {
-          return (
-            <ColorBox
-              key={index}
-              contrastToWhite={contrastToWhite}
-              color={color}
-              contrastToBlack={contrastToBlack}
-            />
-          );
+        {Object.values(swatch).map((color, index) => {
+          return <ColorBox key={index} color={color} />;
         })}
       </div>
     </React.Fragment>

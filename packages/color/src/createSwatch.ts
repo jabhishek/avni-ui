@@ -1,5 +1,5 @@
-import { Swatch, SwatchColor } from '@avni-ui/core';
-import { mix, getContrast, parseToRgb, rgbToColorString } from 'polished';
+import { mix, parseToRgb, rgbToColorString } from 'polished';
+import { Swatch } from '@avni-ui/core';
 
 const contrasts = [0.15, 0.3, 0.5, 0.7, 0.85, 1, 0.85, 0.7, 0.5, 0.35];
 const colorWeights = ['50', '100', '200', '300', '400', '500', '600', '700', '800', '900'];
@@ -9,12 +9,8 @@ const toHslString = (color: string): string => {
   return rgbToColorString(rgb);
 };
 
-const getSwatchColor = (swatchColor: string): SwatchColor => {
-  return {
-    color: toHslString(swatchColor),
-    contrastToWhite: getContrast(swatchColor, '#fff'),
-    contrastToBlack: getContrast(swatchColor, '#000'),
-  };
+const getSwatchColor = (swatchColor: string): string => {
+  return toHslString(swatchColor);
 };
 
 export const createSwatch = (baseColor: string): Swatch => {

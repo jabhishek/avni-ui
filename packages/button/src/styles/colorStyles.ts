@@ -1,7 +1,6 @@
-import { ITheme, Swatch, ThemeColor, defaultTheme } from '@avni-ui/core';
-import { createSwatch, getContrastingTextColor } from '@avni-ui/color';
+import { ITheme, ThemeColor, defaultTheme, Swatch } from '@avni-ui/core';
+import { createSwatch, getContrastingTextColor, getHoverColor } from '@avni-ui/color';
 import get from 'lodash.get';
-import { getHoverColor } from '@avni-ui/color';
 import { ButtonVariants } from '../models';
 
 const disabledStateStyles = {
@@ -29,10 +28,10 @@ const getSwatch = (baseColor: string | Swatch): Swatch => {
   return baseColor;
 };
 const getFilledButtonStyles = (swatch: Swatch, theme: ITheme) => {
-  const color = swatch['500'].color;
+  const color: string = swatch['500'];
 
-  const hoverBgColor = swatch['400'].color;
-  const outlineColor = swatch['600'].color;
+  const hoverBgColor: string = swatch['400'];
+  const outlineColor: string = swatch['600'];
 
   return {
     backgroundColor: color,
@@ -47,24 +46,18 @@ const getFilledButtonStyles = (swatch: Swatch, theme: ITheme) => {
 };
 
 const getOutlineButtonStyles = (swatch: Swatch, theme: ITheme) => {
-  const bodyBackgroundColor = theme.colors.backgroundColor;
+  const bodyBackgroundColor: string = theme.colors.backgroundColor;
 
-  console.log('bodyBackgroundColor', bodyBackgroundColor);
-
-  const bgColor = swatch['500'].color;
-  const textColor = getContrastingTextColor(
+  const bgColor: string = swatch['500'];
+  const textColor: string = getContrastingTextColor(
     bodyBackgroundColor,
-    swatch['700'].color,
-    swatch['200'].color,
+    swatch['700'],
+    swatch['200'],
   );
 
   const hoverBgColor = getHoverColor(bodyBackgroundColor);
-  const hoverTextColor = getContrastingTextColor(
-    hoverBgColor,
-    swatch['700'].color,
-    swatch['200'].color,
-  );
-  const outlineColor = swatch['600'].color;
+  const hoverTextColor = getContrastingTextColor(hoverBgColor, swatch['700'], swatch['200']);
+  const outlineColor = swatch['600'];
 
   return {
     border: `2px solid ${bgColor}`,

@@ -12,4 +12,5 @@ export const colors: Colors = {
   black,
   textColor,
   backgroundColor,
+  red: 'hsl(0, 100%, 50%)',
 };

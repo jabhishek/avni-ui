@@ -4,12 +4,24 @@ import { Toggle } from '../helpers/Toggle';
 
 <Meta title="Components/Switch" component={Toggle} />
 
-# Heading
+# Switch component
 
+## Default props
 <Preview withSource="none">
   <Story name="Default">
     <div>
         <Toggle onChange={action('clicked')}/>
+    </div>
+  </Story>
+</Preview>
+
+## Different sizes
+<Preview withSource="none">
+  <Story name="Different Sizes">
+    <div>
+        <Toggle size="sm"/>
+        <Toggle size="md"/>
+        <Toggle size="lg"/>
     </div>
   </Story>
 </Preview>

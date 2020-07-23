@@ -8,13 +8,8 @@ export type Typography = {
   fontSizes: Record<string, string>;
 };
 
-export type SwatchColor = {
-  color: string;
-  contrastToWhite: number;
-  contrastToBlack: number;
-};
+export type Swatch = Record<string, string>;
 
-export type Swatch = Record<string, SwatchColor>;
 export type ThemeColor = string | Swatch;
 
 export type Colors = {

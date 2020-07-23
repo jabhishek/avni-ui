@@ -7,12 +7,7 @@ export declare type Typography = {
     };
     fontSizes: Record<string, string>;
 };
-export declare type SwatchColor = {
-    color: string;
-    contrastToWhite: number;
-    contrastToBlack: number;
-};
-export declare type Swatch = Record<string, SwatchColor>;
+export declare type Swatch = Record<string, string>;
 export declare type ThemeColor = string | Swatch;
 export declare type Colors = {
     primary: ThemeColor;
