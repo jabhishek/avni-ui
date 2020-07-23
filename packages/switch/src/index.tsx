@@ -13,7 +13,7 @@ type Props = {
   size?: SwitchSize;
 };
 
-export const Switch = ({ onChange, onLabel = 'B', offLabel = 'A', on, size = 'md' }: Props) => {
+export const Switch = ({ onChange, onLabel = '', offLabel = '', on, size = 'md' }: Props) => {
   const onClick = () => {
     onChange(!on);
   };

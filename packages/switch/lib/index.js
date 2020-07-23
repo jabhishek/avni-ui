@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Switch = void 0;
 const core_1 = require("@emotion/core");
 const styles_1 = require("./styles");
-exports.Switch = ({ onChange, onLabel = 'B', offLabel = 'A', on, size = 'md' }) => {
+exports.Switch = ({ onChange, onLabel = '', offLabel = '', on, size = 'md' }) => {
     const onClick = () => {
         onChange(!on);
     };
