@@ -1,6 +1,6 @@
 {
   "name": "@avni-ui/button",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "Button Component",
   "keywords": [
     "React",
@@ -40,8 +40,8 @@
     "typescript": "3.9.3"
   },
   "dependencies": {
-    "@avni-ui/color": "^0.0.7",
-    "@avni-ui/core": "^0.1.9",
+    "@avni-ui/color": "^0.0.8",
+    "@avni-ui/core": "^0.1.10",
     "@emotion/is-prop-valid": "^0.8.8",
     "lodash.get": "^4.4.2",
     "lodash.omit": "^4.5.0"

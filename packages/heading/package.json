@@ -1,6 +1,6 @@
 {
   "name": "@avni-ui/heading",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "> TODO: description",
   "author": "Abhishek Jain <abhi2000@gmail.com>",
   "homepage": "https://github.com/jabhishek/avni-ui#readme",
@@ -35,6 +35,6 @@
     "react-dom": "16.13.1"
   },
   "dependencies": {
-    "@avni-ui/core": "^0.1.9"
+    "@avni-ui/core": "^0.1.10"
   }
 }

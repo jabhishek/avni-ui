@@ -1,6 +1,6 @@
 {
   "name": "@avni-ui/switch",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Accessible Switch component",
   "keywords": [
     "avni-ui",
@@ -41,6 +41,6 @@
     "react-dom": "16.13.1"
   },
   "dependencies": {
-    "@avni-ui/core": "^0.1.9"
+    "@avni-ui/core": "^0.1.10"
   }
 }
