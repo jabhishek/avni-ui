@@ -81,14 +81,14 @@ export const getKnobStyles = (on: boolean, knobSize: number, knobLeftOn: number)
   };
 };
 
-export const getLabelStyles = (on: boolean, switchHeight: number) => {
+export const getLabelStyles = (on: boolean, size: number) => {
   return {
     ...defaultLabelProps,
-    width: switchHeight,
-    lineHeight: `${switchHeight}px`,
+    width: size,
+    lineHeight: `${size}px`,
     left: on ? 0 : 'auto',
     right: on ? 'auto' : 0,
-    fontSize: switchHeight / 2,
+    fontSize: size / 2,
   };
 };
 
