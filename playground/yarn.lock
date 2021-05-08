@@ -29,6 +29,17 @@
     "@avni-ui/core" "^0.1.8"
     polished "3.6.5"
 
+"@avni-ui/core@^0.1.10":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@avni-ui/core/-/core-0.1.10.tgz#5a1444f7123beffd6475ca53d0b05e5a71dd46c2"
+  integrity sha512-x1LfxSvN2YSjCmcuUHYLtq71U3QvRmdqdrY1Q3E3zTujqFVUsHsdSL8/Pfw6d8rl/6pmt5zCVvIPUraeCbpdrA==
+  dependencies:
+    "@styled-system/css" "^5.1.5"
+    "@styled-system/should-forward-prop" "^5.1.5"
+    "@types/color" "^3.0.1"
+    color "^3.1.2"
+    csstype "^2.6.10"
+
 "@avni-ui/core@^0.1.5", "@avni-ui/core@^0.1.8":
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/@avni-ui/core/-/core-0.1.8.tgz#95a1c7335f58ea1e70adbcfc7c3984736fc0774a"
@@ -46,6 +57,13 @@
   integrity sha512-nkBY0vCWb34OtoOC+j9sY4pO3FJvH9DSZZrpVBZwZbT7CJRafZ0fBm5OJcaaP43fBoz5QVqKkQaImhTQfQ8tnQ==
   dependencies:
     "@avni-ui/core" "^0.1.8"
+
+"@avni-ui/switch@latest":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@avni-ui/switch/-/switch-0.0.4.tgz#acc90fbf5d4d26b50eabe11489399125bf0e1a6d"
+  integrity sha512-5hyD2AeDTii0BVx2kihmqVeQ/2P80DZLHDUScCbN4W7fwTwLNoOI6Ni2sndNQCQUFTMLct76pgVpakLrpL3qoA==
+  dependencies:
+    "@avni-ui/core" "^0.1.10"
 
 "@babel/code-frame@7.5.5":
   version "7.5.5"
@@ -10806,9 +10824,9 @@ typescript@^3.9.3:
   integrity sha512-Pspx3oKAPJtjNwE92YS05HQoY7z2SFyOpHo9MqJor3BXAGNaPUs83CuVp9VISFkSjyRfiTpmKuAYGJB7S7hOxw==
 
 ua-parser-js@^0.7.18:
-  version "0.7.21"
-  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.21.tgz#853cf9ce93f642f67174273cc34565ae6f308777"
-  integrity sha512-+O8/qh/Qj8CgC6eYBVBykMrNtp5Gebn4dlGD/kKXVkJNDwyrAwSIqwz8CDf+tsAIWVycKcku6gIXJ0qwx/ZXaQ==
+  version "0.7.28"
+  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.28.tgz#8ba04e653f35ce210239c64661685bf9121dec31"
+  integrity sha512-6Gurc1n//gjp9eQNXjD9O3M/sMwVtN5S8Lv9bvOYBfKfDNiIIhqiyi01vMBO45u4zkDE420w/e0se7Vs+sIg+g==
 
 uglify-js@^2.6.1:
   version "2.8.29"
