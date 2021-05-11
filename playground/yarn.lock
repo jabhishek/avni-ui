@@ -29,6 +29,17 @@
     "@avni-ui/core" "^0.1.8"
     polished "3.6.5"
 
+"@avni-ui/core@^0.1.10":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@avni-ui/core/-/core-0.1.10.tgz#5a1444f7123beffd6475ca53d0b05e5a71dd46c2"
+  integrity sha512-x1LfxSvN2YSjCmcuUHYLtq71U3QvRmdqdrY1Q3E3zTujqFVUsHsdSL8/Pfw6d8rl/6pmt5zCVvIPUraeCbpdrA==
+  dependencies:
+    "@styled-system/css" "^5.1.5"
+    "@styled-system/should-forward-prop" "^5.1.5"
+    "@types/color" "^3.0.1"
+    color "^3.1.2"
+    csstype "^2.6.10"
+
 "@avni-ui/core@^0.1.5", "@avni-ui/core@^0.1.8":
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/@avni-ui/core/-/core-0.1.8.tgz#95a1c7335f58ea1e70adbcfc7c3984736fc0774a"
@@ -46,6 +57,13 @@
   integrity sha512-nkBY0vCWb34OtoOC+j9sY4pO3FJvH9DSZZrpVBZwZbT7CJRafZ0fBm5OJcaaP43fBoz5QVqKkQaImhTQfQ8tnQ==
   dependencies:
     "@avni-ui/core" "^0.1.8"
+
+"@avni-ui/switch@latest":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@avni-ui/switch/-/switch-0.0.4.tgz#acc90fbf5d4d26b50eabe11489399125bf0e1a6d"
+  integrity sha512-5hyD2AeDTii0BVx2kihmqVeQ/2P80DZLHDUScCbN4W7fwTwLNoOI6Ni2sndNQCQUFTMLct76pgVpakLrpL3qoA==
+  dependencies:
+    "@avni-ui/core" "^0.1.10"
 
 "@babel/code-frame@7.5.5":
   version "7.5.5"
@@ -7530,15 +7548,10 @@ lodash.uniq@4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
-lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.15:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
-
-lodash@^4.17.4:
-  version "4.17.19"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
-  integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
+lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.15, lodash@^4.17.4:
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 log-symbols@^2.1.0:
   version "2.2.0"
