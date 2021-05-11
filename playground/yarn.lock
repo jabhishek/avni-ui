@@ -29,6 +29,17 @@
     "@avni-ui/core" "^0.1.8"
     polished "3.6.5"
 
+"@avni-ui/core@^0.1.10":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@avni-ui/core/-/core-0.1.10.tgz#5a1444f7123beffd6475ca53d0b05e5a71dd46c2"
+  integrity sha512-x1LfxSvN2YSjCmcuUHYLtq71U3QvRmdqdrY1Q3E3zTujqFVUsHsdSL8/Pfw6d8rl/6pmt5zCVvIPUraeCbpdrA==
+  dependencies:
+    "@styled-system/css" "^5.1.5"
+    "@styled-system/should-forward-prop" "^5.1.5"
+    "@types/color" "^3.0.1"
+    color "^3.1.2"
+    csstype "^2.6.10"
+
 "@avni-ui/core@^0.1.5", "@avni-ui/core@^0.1.8":
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/@avni-ui/core/-/core-0.1.8.tgz#95a1c7335f58ea1e70adbcfc7c3984736fc0774a"
@@ -46,6 +57,13 @@
   integrity sha512-nkBY0vCWb34OtoOC+j9sY4pO3FJvH9DSZZrpVBZwZbT7CJRafZ0fBm5OJcaaP43fBoz5QVqKkQaImhTQfQ8tnQ==
   dependencies:
     "@avni-ui/core" "^0.1.8"
+
+"@avni-ui/switch@latest":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@avni-ui/switch/-/switch-0.0.4.tgz#acc90fbf5d4d26b50eabe11489399125bf0e1a6d"
+  integrity sha512-5hyD2AeDTii0BVx2kihmqVeQ/2P80DZLHDUScCbN4W7fwTwLNoOI6Ni2sndNQCQUFTMLct76pgVpakLrpL3qoA==
+  dependencies:
+    "@avni-ui/core" "^0.1.10"
 
 "@babel/code-frame@7.5.5":
   version "7.5.5"
@@ -6456,9 +6474,9 @@ hoist-non-react-statics@^3.3.0:
     react-is "^16.7.0"
 
 hosted-git-info@^2.1.4:
-  version "2.8.8"
-  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.8.tgz#7539bd4bc1e0e0a895815a2e0262420b12858488"
-  integrity sha512-f/wzC2QaWBs7t9IYqB4T3sR1xviIViXJRJTWBlx2Gf3g0Xi5vI7Yy4koXQ1c9OYDGHN9sBy1DQ2AB8fqZBWhUg==
+  version "2.8.9"
+  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.9.tgz#dffc0bf9a21c02209090f2aa69429e1414daf3f9"
+  integrity sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==
 
 html-entities@^1.2.0:
   version "1.3.1"
