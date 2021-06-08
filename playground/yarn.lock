@@ -29,6 +29,17 @@
     "@avni-ui/core" "^0.1.8"
     polished "3.6.5"
 
+"@avni-ui/core@^0.1.10":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@avni-ui/core/-/core-0.1.10.tgz#5a1444f7123beffd6475ca53d0b05e5a71dd46c2"
+  integrity sha512-x1LfxSvN2YSjCmcuUHYLtq71U3QvRmdqdrY1Q3E3zTujqFVUsHsdSL8/Pfw6d8rl/6pmt5zCVvIPUraeCbpdrA==
+  dependencies:
+    "@styled-system/css" "^5.1.5"
+    "@styled-system/should-forward-prop" "^5.1.5"
+    "@types/color" "^3.0.1"
+    color "^3.1.2"
+    csstype "^2.6.10"
+
 "@avni-ui/core@^0.1.5", "@avni-ui/core@^0.1.8":
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/@avni-ui/core/-/core-0.1.8.tgz#95a1c7335f58ea1e70adbcfc7c3984736fc0774a"
@@ -46,6 +57,13 @@
   integrity sha512-nkBY0vCWb34OtoOC+j9sY4pO3FJvH9DSZZrpVBZwZbT7CJRafZ0fBm5OJcaaP43fBoz5QVqKkQaImhTQfQ8tnQ==
   dependencies:
     "@avni-ui/core" "^0.1.8"
+
+"@avni-ui/switch@latest":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@avni-ui/switch/-/switch-0.0.4.tgz#acc90fbf5d4d26b50eabe11489399125bf0e1a6d"
+  integrity sha512-5hyD2AeDTii0BVx2kihmqVeQ/2P80DZLHDUScCbN4W7fwTwLNoOI6Ni2sndNQCQUFTMLct76pgVpakLrpL3qoA==
+  dependencies:
+    "@avni-ui/core" "^0.1.10"
 
 "@babel/code-frame@7.5.5":
   version "7.5.5"
@@ -7759,9 +7777,9 @@ memory-fs@^0.5.0:
     readable-stream "^2.0.1"
 
 merge-deep@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/merge-deep/-/merge-deep-3.0.2.tgz#f39fa100a4f1bd34ff29f7d2bf4508fbb8d83ad2"
-  integrity sha512-T7qC8kg4Zoti1cFd8Cr0M+qaZfOwjlPDEdZIIPPB2JZctjaPM4fX+i7HOId69tAti2fvO6X5ldfYUONDODsrkA==
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/merge-deep/-/merge-deep-3.0.3.tgz#1a2b2ae926da8b2ae93a0ac15d90cd1922766003"
+  integrity sha512-qtmzAS6t6grwEkNrunqTBdn0qKwFgNWvlxUbAV8es9M7Ot1EbyApytCnvE0jALPa46ZpKDUo527kKiaWplmlFA==
   dependencies:
     arr-union "^3.1.0"
     clone-deep "^0.2.4"
